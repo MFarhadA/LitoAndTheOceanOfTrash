@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://drheihyno2ooc"]
+
+[ext_resource type="Script" path="res://Physics/WaterDetection2D.gd" id="1_3wk2m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82n1e"]
+size = Vector2(67, 29)
+
+[node name="WaterDetection2D" type="Area2D"]
+position = Vector2(0.5, -15.5)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3wk2m")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -15.5)
+shape = SubResource("RectangleShape2D_82n1e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
