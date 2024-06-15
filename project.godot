@@ -13,7 +13,7 @@ config_version=5
 config/name="Lito And The Ocean Of Trash"
 run/main_scene="res://Ocean/Ocean.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Bag/bag1.png"
 
 [input]
 
