@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxx5y2vag6ot5"]
+
+[ext_resource type="Texture2D" uid="uid://efqrmgg2vt6d" path="res://Ocean/ocean.jpg" id="1_ib0q7"]
+[ext_resource type="PackedScene" uid="uid://bd2j3uyagvny6" path="res://Player/player.tscn" id="2_wx25b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c4vy"]
+size = Vector2(515, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cap3j"]
+size = Vector2(1771, 925)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(876, 620)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ib0q7")
+
+[node name="Player" parent="." instance=ExtResource("2_wx25b")]
+position = Vector2(705, 323)
+scale = Vector2(0.425, 0.425)
+collision_mask = 1
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0.449058, -43.3355)
+scale = Vector2(3.04668, 3.04668)
+zoom = Vector2(1.785, 1.785)
+limit_left = 0
+limit_right = 1751
+limit_bottom = 1240
+limit_smoothed = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(462.5, 340)
+shape = SubResource("RectangleShape2D_1c4vy")
+
+[node name="Water" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="water" type="CollisionShape2D" parent="Water"]
+position = Vector2(875.5, 792.5)
+shape = SubResource("RectangleShape2D_cap3j")
