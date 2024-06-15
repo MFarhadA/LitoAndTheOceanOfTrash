@@ -733,7 +733,7 @@ size = Vector2(67, 29)
 size = Vector2(67, 29)
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 3
+collision_mask = 7
 script = ExtResource("1_ndj7k")
 
 [node name="player" type="AnimatedSprite2D" parent="."]
@@ -763,9 +763,10 @@ position = Vector2(0.5, -15.5)
 shape = SubResource("RectangleShape2D_f6f5i")
 
 [node name="WaterDetection2D" parent="." instance=ExtResource("6_feefm")]
+position = Vector2(0, -15)
 
 [node name="BorderDetection2D" parent="." instance=ExtResource("7_gpa1d")]
-collision_mask = 2
+position = Vector2(0, -15)
 
 [connection signal="water_state_changed" from="WaterDetection2D" to="." method="_on_water_detection_2d_water_state_changed"]
 [connection signal="border_state_changed" from="BorderDetection2D" to="." method="_on_border_detection_2d_border_state_changed"]
