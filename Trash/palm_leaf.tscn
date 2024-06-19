@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7h1qjy4u2sbk"]
+
+[ext_resource type="Texture2D" uid="uid://dd0ao70sic08c" path="res://Trash/palmleaf.png" id="1_b3i8i"]
+
+[node name="PalmLeaf" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.837758
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("1_b3i8i")

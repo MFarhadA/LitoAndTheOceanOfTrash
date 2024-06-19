@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://jg62ibtsve6v"]
+
+[ext_resource type="Texture2D" uid="uid://bxl0c27fe5moh" path="res://Trash/accubattery.png" id="1_hqd63"]
+
+[node name="AccuBattery" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.47822
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("1_hqd63")
