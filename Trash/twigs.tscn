@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://yx8yx1qy5gsr"]
+
+[ext_resource type="Texture2D" uid="uid://dfvk3qipv8ao3" path="res://Trash/twigs.png" id="1_q3alm"]
+
+[node name="Twigs" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 2.39285
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("1_q3alm")
