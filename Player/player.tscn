@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://bd2j3uyagvny6"]
+[gd_scene load_steps=113 format=3 uid="uid://bd2j3uyagvny6"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_ndj7k"]
 [ext_resource type="Texture2D" uid="uid://chhsal0hot4ca" path="res://Player/Fall.png" id="2_nex3s"]
@@ -732,7 +732,10 @@ size = Vector2(67, 29)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6f5i"]
 size = Vector2(67, 29)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcihu"]
+radius = 69.0652
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 10
 collision_mask = 7
 script = ExtResource("1_ndj7k")
@@ -769,6 +772,12 @@ position = Vector2(0, -15)
 
 [node name="BorderDetection2D" parent="." instance=ExtResource("7_gpa1d")]
 position = Vector2(0, -15)
+
+[node name="ItemMagnet" type="Area2D" parent="."]
+
+[node name="itemmagnet" type="CollisionShape2D" parent="ItemMagnet"]
+position = Vector2(1, -39)
+shape = SubResource("CircleShape2D_kcihu")
 
 [connection signal="water_state_changed" from="WaterDetection2D" to="." method="_on_water_detection_2d_water_state_changed"]
 [connection signal="border_state_changed" from="BorderDetection2D" to="." method="_on_border_detection_2d_border_state_changed"]

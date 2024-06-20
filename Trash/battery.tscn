@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1y1k8xh0duaa"]
+[gd_scene load_steps=4 format=3 uid="uid://c1y1k8xh0duaa"]
 
+[ext_resource type="Script" path="res://Trash/ItemMagnet.gd" id="1_4n12s"]
 [ext_resource type="Texture2D" uid="uid://ciid23edjm36e" path="res://Trash/battery.png" id="1_squwx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_31ea0"]
+radius = 25.1794
 
 [node name="Battery" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.03, 0.03)
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_4n12s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.0393258, 0.0393258)
 texture = ExtResource("1_squwx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_31ea0")

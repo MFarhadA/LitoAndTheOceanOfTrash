@@ -34,13 +34,13 @@ position = Vector2(682, 311)
 
 [node name="Player" parent="." instance=ExtResource("2_wx25b")]
 position = Vector2(706, 327)
-scale = Vector2(0.265, 0.265)
+scale = Vector2(0.31, 0.31)
 collision_mask = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-9.15527e-05, -33.9623)
 scale = Vector2(3.04668, 3.04668)
-zoom = Vector2(3.15, 3.15)
+zoom = Vector2(2.665, 2.665)
 limit_left = 0
 limit_right = 1751
 limit_bottom = 1240
@@ -73,7 +73,7 @@ position = Vector2(1450.5, 1198.5)
 scale = Vector2(0.328226, 0.328226)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-1680.24, 546.879)
+position = Vector2(-1692.43, 546.879)
 scale = Vector2(3.04668, 3.04668)
 shape = SubResource("RectangleShape2D_vgreq")
 

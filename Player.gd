@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var SPEED : float = 100.0
-@export var SWIM_SPEED : float = 100.0
+@export var SWIM_SPEED : float = 50.0
 @export var GRAVITY : float = 800.0
 @export var JUMP_FORCE : float = -200.0
 @export var JUMP_FORCE_BORDER : float = -450.0
@@ -13,19 +15,24 @@ var is_in_water : bool = false
 var is_in_border : bool = false
 var sinking : bool = true
 
+@onready var area_magnet = $ItemMagnet/itemmagnet
+
+func _ready():
+	area_magnet.shape.radius *= 1
+
 func _physics_process(delta):
-	# print("y=" + str(velocity.y) + ", x=" + str(velocity.x))
+	#print("Player position: ", position)
 	
 	var direction_x = Input.get_axis("Left", "Right")
 	var direction_y = Input.get_axis("Up", "Down")
 
 	if is_in_water:
-		
+		print(is_in_water)
+		area_magnet.shape.radius *= 1
 		if Input.is_action_just_pressed("Jump") and is_in_border:
 			velocity.y += GRAVITY * delta
 			velocity.y = JUMP_FORCE_BORDER
 			$player.play("jump")
-			print("waterjump")
 		
 		if direction_x != 0:
 			velocity.x = direction_x * SWIM_SPEED
@@ -66,7 +73,6 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("Jump") and is_on_floor():
 			velocity.y = JUMP_FORCE
 			$player.play("jump")
-			print("jump")
 
 	if direction_x == 1:
 		$player.flip_h = false
@@ -80,4 +86,3 @@ func _on_water_detection_2d_water_state_changed(is_in_water : bool):
 
 func _on_border_detection_2d_border_state_changed(is_in_border : bool):
 	self.is_in_border = is_in_border
-	print(is_in_border)
