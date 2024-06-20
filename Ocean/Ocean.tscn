@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxx5y2vag6ot5"]
+[gd_scene load_steps=11 format=3 uid="uid://dxx5y2vag6ot5"]
 
 [ext_resource type="Script" path="res://Ocean/Ocean.gd" id="1_2skp5"]
 [ext_resource type="Texture2D" uid="uid://efqrmgg2vt6d" path="res://Ocean/ocean.jpg" id="1_ib0q7"]
 [ext_resource type="PackedScene" uid="uid://bd2j3uyagvny6" path="res://Player/player.tscn" id="2_wx25b"]
 [ext_resource type="PackedScene" uid="uid://d18500kfmy3gb" path="res://Bag/Bag.tscn" id="3_7oik2"]
+[ext_resource type="PackedScene" uid="uid://rhpgys74kfla" path="res://Lito-main menu/Scenes/Level/level.tscn" id="5_f0jgx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1c4vy"]
 size = Vector2(515, 20)
@@ -20,7 +21,7 @@ size = Vector2(1865, 314)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lg6da"]
 size = Vector2(40, 1448.5)
 
-[node name="Node2D" type="Node2D"]
+[node name="Ocean" type="Node2D"]
 script = ExtResource("1_2skp5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -45,6 +46,9 @@ limit_left = 0
 limit_right = 1751
 limit_bottom = 1240
 limit_smoothed = true
+
+[node name="Level" parent="Player" instance=ExtResource("5_f0jgx")]
+position = Vector2(-693.548, -425.806)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

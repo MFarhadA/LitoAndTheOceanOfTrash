@@ -774,9 +774,9 @@ position = Vector2(0, -15)
 position = Vector2(0, -15)
 
 [node name="ItemMagnet" type="Area2D" parent="."]
+position = Vector2(1, -39)
 
 [node name="itemmagnet" type="CollisionShape2D" parent="ItemMagnet"]
-position = Vector2(1, -39)
 shape = SubResource("CircleShape2D_kcihu")
 
 [connection signal="water_state_changed" from="WaterDetection2D" to="." method="_on_water_detection_2d_water_state_changed"]

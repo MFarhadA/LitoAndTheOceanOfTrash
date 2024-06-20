@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Lito And The Ocean Of Trash"
-run/main_scene="res://Ocean/Ocean.tscn"
+run/main_scene="res://Lito-main menu/Scenes/IntroMenu/IntroMenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://Bag/bag1.png"
 
