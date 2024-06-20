@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://pdus072lmbfd"]
+
+[ext_resource type="Texture2D" uid="uid://u1naj5chyruu" path="res://Assets/background.jpg" id="1_pxsxj"]
+[ext_resource type="Texture2D" uid="uid://bmtlcbedpha4b" path="res://Assets/TitleScreen.png" id="2_4ntst"]
+[ext_resource type="Script" path="res://Script/MainMenuButton.gd" id="3_6twdk"]
+[ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="3_b471l"]
+[ext_resource type="PackedScene" uid="uid://rhpgys74kfla" path="res://Scenes/Level/level.tscn" id="4_7ebjt"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pxsxj")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TitleScreen" type="Sprite2D" parent="MarginContainer/VBoxContainer"]
+position = Vector2(564, 140)
+scale = Vector2(0.283854, 0.284259)
+texture = ExtResource("2_4ntst")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3125
+anchor_top = 0.49537
+anchor_right = 0.694444
+anchor_bottom = 0.915123
+offset_top = -25.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+script = ExtResource("3_6twdk")
+sceneToLoad = ExtResource("4_7ebjt")
+metadata/_edit_use_anchors_ = true
+
+[node name="Play_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_b471l")
+theme_override_font_sizes/font_size = 30
+text = "START"
+
+[node name="Setting_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_b471l")
+theme_override_font_sizes/font_size = 30
+text = "SETTING"
+
+[node name="Credit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_b471l")
+theme_override_font_sizes/font_size = 30
+text = "CREDIT"
+
+[node name="Exit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_b471l")
+theme_override_font_sizes/font_size = 30
+text = "QUIT
+"
+
+[connection signal="pressed" from="VBoxContainer/Play_button" to="VBoxContainer" method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Setting_button" to="VBoxContainer" method="_on_setting_button_pressed"]
