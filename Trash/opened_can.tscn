@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Trash/ItemMagnet.gd" id="1_h2c7k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4deba"]
-radius = 25.1794
+radius = 5.0
 
 [node name="OpenedCan" type="Node2D"]
 
