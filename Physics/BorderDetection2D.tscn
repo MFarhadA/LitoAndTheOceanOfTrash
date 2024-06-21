@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3qg604805n55"]
+
+[ext_resource type="Script" path="res://Physics/BorderDetection2D.gd" id="1_3c8vg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2u5vg"]
+size = Vector2(67, 29)
+
+[node name="BorderDetection2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_3c8vg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_2u5vg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

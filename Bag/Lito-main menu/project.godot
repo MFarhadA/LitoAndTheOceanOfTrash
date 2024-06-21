@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Lito - Main menu"
+run/main_scene="res://Scenes/MainMenu/main_menu.tscn"
+config/features=PackedStringArray("4.1", "Mobile")
+boot_splash/bg_color=Color(0.0470588, 0.0470588, 0.0470588, 1)
+boot_splash/image="res://Assets/logo2.png"
+boot_splash/fullsize=false
+config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3000
+config/use_filter=true
+config/show_image=true
+config/fullsize=true
+config/minimum_display_time=0
+
+[rendering]
+
+renderer/rendering_method="mobile"

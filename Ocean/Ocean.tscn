@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxx5y2vag6ot5"]
+
+[ext_resource type="Script" path="res://Ocean/Ocean.gd" id="1_2skp5"]
+[ext_resource type="Texture2D" uid="uid://efqrmgg2vt6d" path="res://Ocean/ocean.jpg" id="1_ib0q7"]
+[ext_resource type="PackedScene" uid="uid://bd2j3uyagvny6" path="res://Player/player.tscn" id="2_wx25b"]
+[ext_resource type="PackedScene" uid="uid://d18500kfmy3gb" path="res://Bag/Bag.tscn" id="3_7oik2"]
+[ext_resource type="PackedScene" uid="uid://vq2smpjqo27e" path="res://Physics/Camera.tscn" id="5_ff5nb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c4vy"]
+size = Vector2(515, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eosy4"]
+size = Vector2(1783, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cap3j"]
+size = Vector2(1771, 925)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgreq"]
+size = Vector2(1865, 314)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg6da"]
+size = Vector2(40, 1448.5)
+
+[node name="Ocean" type="Node2D"]
+script = ExtResource("1_2skp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(876, 620)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ib0q7")
+
+[node name="Bag" parent="." instance=ExtResource("3_7oik2")]
+position = Vector2(682, 311)
+
+[node name="Player" parent="." instance=ExtResource("2_wx25b")]
+position = Vector2(706, 327)
+scale = Vector2(0.31, 0.31)
+collision_mask = 1
+
+[node name="Camera2" parent="Player" instance=ExtResource("5_ff5nb")]
+position = Vector2(0, -34.745)
+scale = Vector2(4.455, 4.455)
+zoom = Vector2(2.44, 2.44)
+limit_left = 0
+limit_right = 1751
+limit_bottom = 1240
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(462.5, 340)
+shape = SubResource("RectangleShape2D_1c4vy")
+
+[node name="Border" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="border" type="CollisionShape2D" parent="Border"]
+position = Vector2(883, 351)
+shape = SubResource("RectangleShape2D_eosy4")
+
+[node name="Water" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="water" type="CollisionShape2D" parent="Water"]
+position = Vector2(870, 795)
+shape = SubResource("RectangleShape2D_cap3j")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1450.5, 1198.5)
+scale = Vector2(0.328226, 0.328226)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-1692.43, 546.879)
+scale = Vector2(3.04668, 3.04668)
+shape = SubResource("RectangleShape2D_vgreq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-4480.15, -1765.55)
+scale = Vector2(3.04668, 3.04668)
+shape = SubResource("RectangleShape2D_lg6da")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(979.508, -1738.13)
+scale = Vector2(3.04668, 3.04668)
+shape = SubResource("RectangleShape2D_lg6da")

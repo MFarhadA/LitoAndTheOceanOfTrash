@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2qgptqpy05yw"]
+
+[ext_resource type="Script" path="res://Lito-main menu/Scenes/IntroMenu/IntroMenu.gd" id="1_1adid"]
+[ext_resource type="Texture2D" uid="uid://bisd55tx3j51j" path="res://Lito-main menu/logo.png" id="2_lq4op"]
+
+[sub_resource type="Animation" id="Animation_a2hhv"]
+resource_name = "Fade In"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x2ue1"]
+resource_name = "Fade Out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jjkeb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_knqng"]
+_data = {
+"Fade In": SubResource("Animation_a2hhv"),
+"Fade Out": SubResource("Animation_x2ue1"),
+"RESET": SubResource("Animation_jjkeb")
+}
+
+[node name="IntroMenu" type="Node2D"]
+script = ExtResource("1_1adid")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -42.0
+offset_top = -22.0
+offset_right = 1172.0
+offset_bottom = 680.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(588, 308)
+texture = ExtResource("2_lq4op")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 3
+offset_left = -120.0
+offset_top = -74.0
+offset_right = 1258.0
+offset_bottom = 728.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_knqng")
+}
