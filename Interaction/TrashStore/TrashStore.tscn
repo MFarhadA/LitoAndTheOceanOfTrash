@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://3ivl1jtnhnrg"]
+
+[ext_resource type="Script" path="res://Interaction/BoatStore/BoatStore.gd" id="1_yecoq"]
+[ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="2_wkwif"]
+[ext_resource type="Theme" uid="uid://c30qsbfwolqdo" path="res://Interaction/storetheme.tres" id="3_1nfn4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7x3u8"]
+bg_color = Color(0.63, 0.2394, 0.2394, 1)
+
+[sub_resource type="Theme" id="Theme_ja0x6"]
+Button/styles/normal = SubResource("StyleBoxFlat_7x3u8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boqwe"]
+bg_color = Color(0.2394, 0.36309, 0.63, 1)
+
+[node name="TrashStore" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_yecoq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -467.0
+offset_top = -152.0
+offset_right = 467.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0705882, 0.262745, 0.411765, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="cancel" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.837
+anchor_top = 0.317
+anchor_right = 0.837
+anchor_bottom = 0.317
+offset_left = -65.224
+offset_top = -21.416
+offset_right = 64.776
+offset_bottom = 21.584
+theme = SubResource("Theme_ja0x6")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_wkwif")
+text = "TUTUP"
+metadata/_edit_use_anchors_ = true
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -457.0
+offset_top = -86.0
+offset_right = 457.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_1nfn4")
+theme_override_fonts/font = ExtResource("2_wkwif")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -431.0
+offset_top = 331.0
+offset_right = 431.0
+offset_bottom = 407.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_wkwif")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_boqwe")
+text = "BUANG"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -422.0
+offset_top = 252.0
+offset_right = 422.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_wkwif")
+theme_override_font_sizes/font_size = 46
+text = "buang semua sampah yang kamu punya ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]

@@ -11,23 +11,31 @@ class_name Player
 @export var SWIM_GRAVITY : float = 0.001
 @export var SWIM_VELOCITY_CAP : float = 100.0
 
+@export var dash_speed = 2500
+@export var dash_duration = 0.1
+
+@onready var timer = $"."
+
 var is_in_water : bool = false
 var is_in_border : bool = false
 var sinking : bool = true
+var SWIM_NORMAL_SPEED : float = 50.0
 
 @onready var area_magnet = $ItemMagnet/itemmagnet
+@onready var control = $ControlMenu
+@onready var stamina = $ControlMenu/Test/UI/StaminaBar
+@onready var dash = $Timer
 
 func _ready():
 	area_magnet.shape.radius *= 1
 
 func _physics_process(delta):
-	#print("Player position: ", position)
-	
+
 	var direction_x = Input.get_axis("Left", "Right")
 	var direction_y = Input.get_axis("Up", "Down")
-
+	
 	if is_in_water:
-		print(is_in_water)
+
 		area_magnet.shape.radius *= 1
 		if Input.is_action_just_pressed("Jump") and is_in_border:
 			velocity.y += GRAVITY * delta
@@ -49,11 +57,22 @@ func _physics_process(delta):
 			if direction_y == 0:
 				velocity.y = move_toward(velocity.y, 0, SWIM_SPEED)
 				sinking = true
-				
+		
+		if Input.is_action_just_pressed("Dash") and stamina.value > 0:
+			dash.start_dash(dash_duration)
+			stamina.value -= control.decrease_rate
+			control.can_regen = false
+			control.s_timer = 0
+			SWIM_SPEED = dash_speed
+		else:
+			SWIM_SPEED = SWIM_NORMAL_SPEED
+			
+			
 		if direction_x != 0:
 			$player.play("swim_side")
 		else:
 			$player.play("swim_idle")
+		
 		
 	else:
 		sinking = true
@@ -69,20 +88,20 @@ func _physics_process(delta):
 				$player.play("idle")
 		else:
 			velocity.y += GRAVITY * delta
-
+	
 		if Input.is_action_just_pressed("Jump") and is_on_floor():
 			velocity.y = JUMP_FORCE
 			$player.play("jump")
+		
 
 	if direction_x > 0.3:
 		$player.flip_h = false
 	elif direction_x < -0.3:
 		$player.flip_h = true
-	
-	print("x, ", direction_x)
-	print("y, ", direction_y)
-	move_and_slide()
 
+	move_and_slide()
+	
+	
 func _on_water_detection_2d_water_state_changed(is_in_water : bool):
 	self.is_in_water = is_in_water
 

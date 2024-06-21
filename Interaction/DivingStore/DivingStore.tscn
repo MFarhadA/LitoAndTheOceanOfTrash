@@ -1,0 +1,243 @@
+[gd_scene load_steps=9 format=3 uid="uid://cox4vp7vm1fbh"]
+
+[ext_resource type="Script" path="res://Interaction/DivingStore/DivingStore.gd" id="1_hwmmh"]
+[ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="1_yh6cd"]
+[ext_resource type="Theme" uid="uid://c30qsbfwolqdo" path="res://Interaction/storetheme.tres" id="2_dhqqw"]
+[ext_resource type="Texture2D" uid="uid://cpgjqqllhq3hk" path="res://Interaction/DivingStore/fin1.png" id="3_r8g3i"]
+[ext_resource type="Texture2D" uid="uid://b2s2h8m2qxuhv" path="res://Interaction/DivingStore/fin2.png" id="4_awgqn"]
+[ext_resource type="Texture2D" uid="uid://dqder2380s6yt" path="res://Interaction/DivingStore/fin3.png" id="5_dnnwe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7x3u8"]
+bg_color = Color(0.63, 0.2394, 0.2394, 1)
+
+[sub_resource type="Theme" id="Theme_ja0x6"]
+Button/styles/normal = SubResource("StyleBoxFlat_7x3u8")
+
+[node name="DivingShop" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hwmmh")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -526.0
+offset_top = -189.0
+offset_right = 526.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0705882, 0.262745, 0.411765, 1)
+
+[node name="cancel" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.876
+anchor_top = 0.268
+anchor_right = 0.876
+anchor_bottom = 0.268
+offset_left = -65.152
+offset_top = -21.664
+offset_right = 64.848
+offset_bottom = 21.336
+theme = SubResource("Theme_ja0x6")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("1_yh6cd")
+text = "TUTUP"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.275
+anchor_right = 0.5
+anchor_bottom = 0.275
+offset_left = -272.5
+offset_top = -56.2
+offset_right = 272.5
+offset_bottom = 41.8
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_yh6cd")
+theme_override_font_sizes/font_size = 46
+text = "DIVING STORE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -504.0
+offset_top = -150.5
+offset_right = 504.0
+offset_bottom = 216.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dhqqw")
+theme_override_fonts/font = ExtResource("1_yh6cd")
+
+[node name="Kaki Katak" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Kaki Katak"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -488.0
+offset_top = -149.5
+offset_right = 488.0
+offset_bottom = 149.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="control" type="Node2D" parent="TabContainer/Kaki Katak/RichTextLabel"]
+position = Vector2(8, -6.5)
+
+[node name="Panel" type="Panel" parent="TabContainer/Kaki Katak/RichTextLabel/control"]
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 309.0
+offset_bottom = 299.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel"]
+position = Vector2(140, 100)
+scale = Vector2(0.264151, 0.264151)
+texture = ExtResource("3_r8g3i")
+
+[node name="Label" type="Label" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 37.5
+offset_right = 127.0
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yh6cd")
+theme_override_font_sizes/font_size = 31
+text = "SANDAL JEPIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 235.0
+offset_right = 264.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("1_yh6cd")
+text = "BUY"
+
+[node name="Panel2" type="Panel" parent="TabContainer/Kaki Katak/RichTextLabel/control"]
+offset_left = 331.0
+offset_top = 12.0
+offset_right = 629.0
+offset_bottom = 299.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel2"]
+position = Vector2(140, 100)
+scale = Vector2(0.264151, 0.264151)
+texture = ExtResource("4_awgqn")
+
+[node name="Label" type="Label" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 37.5
+offset_right = 127.0
+offset_bottom = 83.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yh6cd")
+theme_override_font_sizes/font_size = 31
+text = "KAKI BEBEK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel2"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 235.0
+offset_right = 264.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("1_yh6cd")
+text = "BUY"
+
+[node name="Panel3" type="Panel" parent="TabContainer/Kaki Katak/RichTextLabel/control"]
+offset_left = 651.0
+offset_top = 12.0
+offset_right = 949.0
+offset_bottom = 299.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel3"]
+position = Vector2(140, 89)
+scale = Vector2(0.180064, 0.180064)
+texture = ExtResource("5_dnnwe")
+
+[node name="Label" type="Label" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 23.5
+offset_right = 127.0
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yh6cd")
+theme_override_font_sizes/font_size = 21
+text = "KAKI KATAK
+PROFESSIONAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel3"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 235.0
+offset_right = 264.0
+offset_bottom = 270.0
+theme_override_fonts/font = ExtResource("1_yh6cd")
+text = "BUY"
+
+[node name="Tabung Oksigen" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Tabung Oksigen"]
+visible = false
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 68.0
+offset_top = 158.0
+offset_right = 1044.0
+offset_bottom = 457.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]

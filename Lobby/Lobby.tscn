@@ -1,14 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://dc15gur6va682"]
+[gd_scene load_steps=18 format=3 uid="uid://dc15gur6va682"]
 
 [ext_resource type="Texture2D" uid="uid://20g30xjras8w" path="res://Lobby/lobby.jpg" id="1_otejo"]
 [ext_resource type="PackedScene" uid="uid://bd2j3uyagvny6" path="res://Player/player.tscn" id="2_34dcp"]
 [ext_resource type="PackedScene" uid="uid://vq2smpjqo27e" path="res://Physics/Camera.tscn" id="2_74xfi"]
+[ext_resource type="Script" path="res://Lobby/AreaBoatStore.gd" id="6_bvbaj"]
+[ext_resource type="Script" path="res://Lobby/AreaDivingShop.gd" id="6_q4na1"]
+[ext_resource type="PackedScene" uid="uid://cox4vp7vm1fbh" path="res://Interaction/DivingStore/DivingStore.tscn" id="7_1e14h"]
+[ext_resource type="PackedScene" uid="uid://dcab7mg225do8" path="res://Interaction/BoatStore/BoatStore.tscn" id="7_miohy"]
+[ext_resource type="Script" path="res://Lobby/AreaTrashStore.gd" id="8_m541e"]
+[ext_resource type="PackedScene" uid="uid://3ivl1jtnhnrg" path="res://Interaction/TrashStore/TrashStore.tscn" id="9_u54b7"]
+[ext_resource type="Script" path="res://Lobby/Island.gd" id="10_ds02q"]
+[ext_resource type="PackedScene" uid="uid://vfv4daj8tbb" path="res://Interaction/Island/Island.tscn" id="11_xup3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6svd"]
+size = Vector2(70.5, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_18moi"]
+size = Vector2(166.474, 167.997)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4om3k"]
+size = Vector2(2329.85, 909.661)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_egh2g"]
 size = Vector2(1168, 296)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4d0e7"]
 size = Vector2(36, 615)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjd16"]
+size = Vector2(2181.33, 724.017)
 
 [node name="Lobby" type="Node2D"]
 
@@ -19,20 +39,57 @@ scale = Vector2(0.328226, 0.328226)
 texture = ExtResource("1_otejo")
 
 [node name="Player" parent="." instance=ExtResource("2_34dcp")]
-position = Vector2(150, 527)
+position = Vector2(281.025, 527)
 scale = Vector2(0.263, 0.263)
 
 [node name="Camera2" parent="Player" instance=ExtResource("2_74xfi")]
-position = Vector2(0, -129.277)
+position = Vector2(-3.89734, -129.277)
 scale = Vector2(3.80228, 3.80228)
 limit_left = 0
 limit_right = 1150
+
+[node name="AreaDivingShop" type="Area2D" parent="."]
+position = Vector2(0, 3.05176e-05)
+script = ExtResource("6_q4na1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDivingShop"]
+position = Vector2(562.75, 504.5)
+shape = SubResource("RectangleShape2D_w6svd")
+
+[node name="DivingShop" parent="AreaDivingShop" instance=ExtResource("7_1e14h")]
+visible = false
+
+[node name="AreaBoatStore" type="Area2D" parent="."]
+position = Vector2(575, 406)
+scale = Vector2(0.328226, 0.328226)
+script = ExtResource("6_bvbaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBoatStore"]
+position = Vector2(376.812, 290.743)
+shape = SubResource("RectangleShape2D_18moi")
+
+[node name="BoatStore" parent="AreaBoatStore" instance=ExtResource("7_miohy")]
+visible = false
+
+[node name="AreaTrashStore" type="Area2D" parent="."]
+position = Vector2(763.73, 539.26)
+scale = Vector2(0.107732, 0.107732)
+script = ExtResource("8_m541e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrashStore"]
+position = Vector2(2262.74, -540.782)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_4om3k")
+
+[node name="TrashStore" parent="AreaTrashStore" instance=ExtResource("9_u54b7")]
+visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(575, 406)
 scale = Vector2(0.328226, 0.328226)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(15.233, 827.737)
 scale = Vector2(3.04668, 3.04668)
 shape = SubResource("RectangleShape2D_egh2g")
@@ -46,3 +103,25 @@ shape = SubResource("RectangleShape2D_4d0e7")
 position = Vector2(1807.35, -330.565)
 scale = Vector2(3.04668, 3.04668)
 shape = SubResource("RectangleShape2D_4d0e7")
+
+[node name="Island" type="Area2D" parent="."]
+position = Vector2(763.73, 539.26)
+scale = Vector2(0.107732, 0.107732)
+script = ExtResource("10_ds02q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Island"]
+position = Vector2(-6035.61, -373.702)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_gjd16")
+
+[node name="Island" parent="Island" instance=ExtResource("11_xup3q")]
+visible = false
+
+[connection signal="body_entered" from="AreaDivingShop" to="AreaDivingShop" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaDivingShop" to="AreaDivingShop" method="_on_body_exited"]
+[connection signal="body_entered" from="AreaBoatStore" to="AreaBoatStore" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaBoatStore" to="AreaBoatStore" method="_on_body_exited"]
+[connection signal="body_entered" from="AreaTrashStore" to="AreaTrashStore" method="_on_body_entered"]
+[connection signal="body_exited" from="AreaTrashStore" to="AreaTrashStore" method="_on_body_exited"]
+[connection signal="body_entered" from="Island" to="Island" method="_on_body_entered"]
+[connection signal="body_exited" from="Island" to="Island" method="_on_body_exited"]

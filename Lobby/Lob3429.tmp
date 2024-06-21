@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=3 uid="uid://dc15gur6va682"]
+
+[ext_resource type="Texture2D" uid="uid://20g30xjras8w" path="res://Lobby/lobby.jpg" id="1_otejo"]
+[ext_resource type="PackedScene" uid="uid://bd2j3uyagvny6" path="res://Player/player.tscn" id="2_34dcp"]
+[ext_resource type="PackedScene" uid="uid://vq2smpjqo27e" path="res://Physics/Camera.tscn" id="2_74xfi"]
+[ext_resource type="PackedScene" uid="uid://dvihmvfdlqocm" path="res://Interaction/InteractionArea/interaction_area.tscn" id="4_hjo3m"]
+[ext_resource type="Script" path="res://Lobby/ControlLobby.gd" id="4_naeh3"]
+[ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="5_m4c86"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egh2g"]
+size = Vector2(1168, 296)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d0e7"]
+size = Vector2(36, 615)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ids1l"]
+radius = 92.0489
+
+[node name="Lobby" type="Node2D"]
+
+[node name="Lobby" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(575.194, 407)
+scale = Vector2(0.328226, 0.328226)
+texture = ExtResource("1_otejo")
+
+[node name="Player" parent="." instance=ExtResource("2_34dcp")]
+position = Vector2(150, 527)
+scale = Vector2(0.263, 0.263)
+
+[node name="Camera2" parent="Player" instance=ExtResource("2_74xfi")]
+position = Vector2(0, -129.277)
+scale = Vector2(3.80228, 3.80228)
+limit_left = 0
+limit_right = 1150
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 468.0
+offset_top = 538.0
+offset_right = 579.0
+offset_bottom = 567.0
+script = ExtResource("4_naeh3")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.455
+anchor_top = 0.569
+anchor_right = 0.455
+anchor_bottom = 0.569
+offset_left = -61.505
+offset_top = -19.501
+offset_right = 61.495
+offset_bottom = 19.499
+theme_override_fonts/font = ExtResource("5_m4c86")
+text = "LIHAT
+"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(575, 406)
+scale = Vector2(0.328226, 0.328226)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(15.233, 827.737)
+scale = Vector2(3.04668, 3.04668)
+shape = SubResource("RectangleShape2D_egh2g")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1806.25, -330.565)
+scale = Vector2(3.04668, 3.04668)
+shape = SubResource("RectangleShape2D_4d0e7")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1807.35, -330.565)
+scale = Vector2(3.04668, 3.04668)
+shape = SubResource("RectangleShape2D_4d0e7")
+
+[node name="InteractionArea" parent="." instance=ExtResource("4_hjo3m")]
+visible = false
+action_name = "DivingShop"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(521, 499)
+shape = SubResource("CircleShape2D_ids1l")
+
+[connection signal="pressed" from="Control/Button" to="Control" method="_on_button_pressed"]

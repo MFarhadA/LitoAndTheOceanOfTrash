@@ -19,7 +19,7 @@ func spawn_trash():
 	var inorganics = [inorganic1, inorganic2]
 	var dangers = [danger1, danger2]
 	
-	for i in range(20):
+	for i in range(70):
 		var kinds = organics[randi() % organics.size()]
 		var trash = kinds.instantiate()
 		trash.position = Vector2(randf_range(25, 1735), randf_range(375, 1075))
@@ -27,7 +27,7 @@ func spawn_trash():
 		add_child(trash)
 		trash.add_to_group("trash_group")
 	
-	for i in range(10):
+	for i in range(50):
 		var kinds = inorganics[randi() % inorganics.size()]
 		var trash = kinds.instantiate()
 		trash.position = Vector2(randf_range(25, 1735), randf_range(375, 1075))
@@ -35,7 +35,7 @@ func spawn_trash():
 		add_child(trash)
 		trash.add_to_group("trash_group")
 		
-	for i in range(10):
+	for i in range(20):
 		var kinds = dangers[randi() % dangers.size()]
 		var trash = kinds.instantiate()
 		trash.position = Vector2(randf_range(25, 1735), randf_range(375, 1075))

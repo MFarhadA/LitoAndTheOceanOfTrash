@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://Ocean/Ocean.tscn")
+	get_tree().change_scene_to_file("res://Lobby/Lobby.tscn")
 
 func _on_setting_button_pressed():
 	var SettingMenuInstance = SettingMenu.instantiate()

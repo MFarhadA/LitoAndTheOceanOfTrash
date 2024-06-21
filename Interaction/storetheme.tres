@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c30qsbfwolqdo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kg7mo"]
+bg_color = Color(0, 0, 0, 0.403922)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.0980392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8wpr"]
+bg_color = Color(0.113725, 0.411765, 0.635294, 1)
+
+[resource]
+TabContainer/font_sizes/font_size = 22
+TabContainer/fonts/font = null
+TabContainer/styles/panel = SubResource("StyleBoxFlat_kg7mo")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_e8wpr")
+TabContainer/styles/tabbar_background = null
