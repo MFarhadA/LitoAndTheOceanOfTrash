@@ -1,6 +1,6 @@
-extends ParallaxBackground
+extends ParallaxLayer
 
 var scrolling_speed = 100
 
 func _process(delta):
-	scroll_offset.x -= scrolling_speed * delta
+	self.motion_offset.x -= scrolling_speed * delta

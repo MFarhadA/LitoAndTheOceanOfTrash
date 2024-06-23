@@ -1,11 +1,19 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxx5y2vag6ot5"]
+[gd_scene load_steps=25 format=3 uid="uid://dxx5y2vag6ot5"]
 
 [ext_resource type="Script" path="res://Ocean/Ocean.gd" id="1_2skp5"]
-[ext_resource type="Texture2D" uid="uid://efqrmgg2vt6d" path="res://Ocean/ocean.jpg" id="1_ib0q7"]
+[ext_resource type="Texture2D" uid="uid://bfskc3y5w4p5" path="res://Ocean/ocean1.png" id="2_bg0hs"]
+[ext_resource type="Script" path="res://Ocean/borderspeed.gd" id="2_hupva"]
 [ext_resource type="PackedScene" uid="uid://bd2j3uyagvny6" path="res://Player/player.tscn" id="2_wx25b"]
 [ext_resource type="PackedScene" uid="uid://d18500kfmy3gb" path="res://Bag/Bag.tscn" id="3_7oik2"]
+[ext_resource type="Texture2D" uid="uid://caromou04m0w8" path="res://Ocean/ocean3.png" id="4_5xtiv"]
+[ext_resource type="Texture2D" uid="uid://c55fjc4nexjgj" path="res://Ocean/oceanl.png" id="4_pbo2l"]
+[ext_resource type="Script" path="res://Ocean/ParallaxLayer2.gd" id="4_two6e"]
+[ext_resource type="Texture2D" uid="uid://c1rm1e2768bsm" path="res://Ocean/oceanr.png" id="5_542bc"]
 [ext_resource type="PackedScene" uid="uid://vq2smpjqo27e" path="res://Physics/Camera.tscn" id="5_ff5nb"]
+[ext_resource type="Texture2D" uid="uid://bgayk537xy5r3" path="res://Ocean/ocean4.png" id="5_qrqsp"]
 [ext_resource type="Texture2D" uid="uid://diecigklwosh6" path="res://Interaction/BoatStore/ship.png" id="6_167g0"]
+[ext_resource type="Script" path="res://Ocean/ParallaxLayer3.gd" id="6_btgcw"]
+[ext_resource type="Texture2D" uid="uid://d0ecvjcheyyv5" path="res://Ocean/ocean5.png" id="6_dndld"]
 [ext_resource type="Theme" uid="uid://dr5h70dwsaamj" path="res://Lito-main menu/Assets/button.tres" id="6_mfm6v"]
 [ext_resource type="LabelSettings" uid="uid://hh5n7do0w5g3" path="res://Lito-main menu/Assets/inventory_label.tres" id="7_yuf1i"]
 
@@ -19,33 +27,84 @@ bg_color = Color(0.2025, 0.47625, 0.75, 1)
 bg_color = Color(0.282353, 0.572549, 0.113725, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eosy4"]
-size = Vector2(1783, 36)
+size = Vector2(1783, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cap3j"]
 size = Vector2(1771, 925)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yxds"]
-size = Vector2(300, 69.0002)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgreq"]
-size = Vector2(1865, 314)
+size = Vector2(1865, 319)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lg6da"]
 size = Vector2(40, 1448.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yxds"]
+size = Vector2(300, 69.0002)
+
 [node name="Ocean" type="Node2D"]
 script = ExtResource("1_2skp5")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1752, 0)
+script = ExtResource("2_hupva")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(1, 1, 1, 0.839216)
+z_index = 11
+texture_filter = 2
+position = Vector2(876, 620)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_dndld")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1752, 0)
+script = ExtResource("4_two6e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+modulate = Color(1, 1, 1, 0.839216)
+texture_filter = 2
+position = Vector2(876, 620)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_pbo2l")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1752, 0)
+script = ExtResource("6_btgcw")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color(1, 1, 1, 0.839216)
+texture_filter = 2
+position = Vector2(876, 620)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_542bc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 2
 position = Vector2(876, 620)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_ib0q7")
+texture = ExtResource("2_bg0hs")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 2
+position = Vector2(876, 620)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_5xtiv")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+z_index = 11
+texture_filter = 2
+position = Vector2(876, 620)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_qrqsp")
 
 [node name="Bag" parent="." instance=ExtResource("3_7oik2")]
 position = Vector2(1511.15, 307.365)
 
 [node name="Player" parent="." instance=ExtResource("2_wx25b")]
+z_index = 8
 position = Vector2(1488, 299)
 scale = Vector2(0.31, 0.31)
 collision_mask = 1
@@ -116,8 +175,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="border" type="CollisionShape2D" parent="Border"]
-visible = false
-position = Vector2(883, 351)
+position = Vector2(883, 354.5)
 shape = SubResource("RectangleShape2D_eosy4")
 
 [node name="Water" type="StaticBody2D" parent="."]
@@ -125,7 +183,6 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="water" type="CollisionShape2D" parent="Water"]
-visible = false
 position = Vector2(870, 795)
 shape = SubResource("RectangleShape2D_cap3j")
 
@@ -133,13 +190,8 @@ shape = SubResource("RectangleShape2D_cap3j")
 position = Vector2(1450.5, 1198.5)
 scale = Vector2(0.328226, 0.328226)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(187.372, -2620.15)
-scale = Vector2(3.04668, 3.04668)
-shape = SubResource("RectangleShape2D_6yxds")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-1692.43, 546.879)
+position = Vector2(-1692.43, 539.263)
 scale = Vector2(3.04668, 3.04668)
 shape = SubResource("RectangleShape2D_vgreq")
 
@@ -156,6 +208,11 @@ shape = SubResource("RectangleShape2D_lg6da")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(1511.15, 226.5)
 scale = Vector2(0.232017, 0.232017)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(3.66504, 482.718)
+scale = Vector2(4.31003, 4.31003)
+shape = SubResource("RectangleShape2D_6yxds")
 
 [node name="Ship" type="Sprite2D" parent="CharacterBody2D"]
 z_index = 10
