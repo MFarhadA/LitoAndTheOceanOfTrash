@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxx5y2vag6ot5"]
+[gd_scene load_steps=13 format=3 uid="uid://dxx5y2vag6ot5"]
 
 [ext_resource type="Script" path="res://Ocean/Ocean.gd" id="1_2skp5"]
 [ext_resource type="Texture2D" uid="uid://efqrmgg2vt6d" path="res://Ocean/ocean.jpg" id="1_ib0q7"]
@@ -6,17 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://d18500kfmy3gb" path="res://Bag/Bag.tscn" id="3_7oik2"]
 [ext_resource type="PackedScene" uid="uid://vq2smpjqo27e" path="res://Physics/Camera.tscn" id="5_ff5nb"]
 [ext_resource type="Texture2D" uid="uid://diecigklwosh6" path="res://Interaction/BoatStore/ship.png" id="6_167g0"]
-[ext_resource type="Theme" uid="uid://dr5h70dwsaamj" path="res://Lito-main menu/Assets/button.tres" id="6_mfm6v"]
-[ext_resource type="LabelSettings" uid="uid://hh5n7do0w5g3" path="res://Lito-main menu/Assets/inventory_label.tres" id="7_yuf1i"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs7vi"]
-bg_color = Color(0.84, 0.616, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkm25"]
-bg_color = Color(0.2025, 0.47625, 0.75, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2k6w"]
-bg_color = Color(0.282353, 0.572549, 0.113725, 1)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c4vy"]
+size = Vector2(515, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eosy4"]
 size = Vector2(1783, 36)
@@ -46,7 +38,7 @@ texture = ExtResource("1_ib0q7")
 position = Vector2(1511.15, 307.365)
 
 [node name="Player" parent="." instance=ExtResource("2_wx25b")]
-position = Vector2(1488, 299)
+position = Vector2(1493.17, 294.045)
 scale = Vector2(0.31, 0.31)
 collision_mask = 1
 
@@ -60,63 +52,36 @@ limit_bottom = 1240
 
 [node name="UI" type="CanvasLayer" parent="Player"]
 
-[node name="DangerLabel" type="Label" parent="Player/UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 56.0
-offset_top = 16.0
-offset_right = 152.0
-offset_bottom = 136.0
-grow_horizontal = 2
-size_flags_horizontal = 2
-theme = ExtResource("6_mfm6v")
-theme_override_styles/normal = SubResource("StyleBoxFlat_hs7vi")
-text = "B3"
-label_settings = ExtResource("7_yuf1i")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="InorganicLabel" type="Label" parent="Player/UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -48.0
-offset_top = 16.0
-offset_right = 48.0
-offset_bottom = 137.0
-grow_horizontal = 2
-size_flags_horizontal = 2
-theme = ExtResource("6_mfm6v")
-theme_override_styles/normal = SubResource("StyleBoxFlat_bkm25")
-text = "Inorganic"
-label_settings = ExtResource("7_yuf1i")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="OrganicBag" type="RichTextLabel" parent="Player/UI"]
+offset_left = 42.0
+offset_top = 107.0
+offset_right = 486.0
+offset_bottom = 182.0
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="OrganicLabel" type="Label" parent="Player/UI"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -152.0
-offset_top = 16.0
-offset_right = -56.0
-offset_bottom = 136.0
-grow_horizontal = 2
-size_flags_horizontal = 2
-theme = ExtResource("6_mfm6v")
-theme_override_styles/normal = SubResource("StyleBoxFlat_r2k6w")
-text = "Organic"
-label_settings = ExtResource("7_yuf1i")
-horizontal_alignment = 1
-vertical_alignment = 1
+anchors_preset = -1
+anchor_left = 0.128
+anchor_top = 0.178
+anchor_right = 0.128
+anchor_bottom = 0.178
+offset_left = -102.456
+offset_top = -17.344
+offset_right = 101.544
+offset_bottom = 17.656
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(462.5, 340)
+shape = SubResource("RectangleShape2D_1c4vy")
 
 [node name="Border" type="StaticBody2D" parent="."]
 collision_layer = 4
 collision_mask = 0
 
 [node name="border" type="CollisionShape2D" parent="Border"]
-visible = false
 position = Vector2(883, 351)
 shape = SubResource("RectangleShape2D_eosy4")
 
@@ -125,7 +90,6 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="water" type="CollisionShape2D" parent="Water"]
-visible = false
 position = Vector2(870, 795)
 shape = SubResource("RectangleShape2D_cap3j")
 
@@ -153,10 +117,8 @@ position = Vector2(979.508, -1738.13)
 scale = Vector2(3.04668, 3.04668)
 shape = SubResource("RectangleShape2D_lg6da")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Ship" type="Sprite2D" parent="."]
+z_index = 10
 position = Vector2(1511.15, 226.5)
 scale = Vector2(0.232017, 0.232017)
-
-[node name="Ship" type="Sprite2D" parent="CharacterBody2D"]
-z_index = 10
 texture = ExtResource("6_167g0")

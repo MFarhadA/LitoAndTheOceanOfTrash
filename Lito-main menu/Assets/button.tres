@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dr5h70dwsaamj"]
+
+[ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="1_2k1mx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njv2a"]
+bg_color = Color(0.137255, 0.47451, 0.666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h50tb"]
+bg_color = Color(0.137255, 0.47451, 0.666667, 1)
+
+[resource]
+default_font = ExtResource("1_2k1mx")
+default_font_size = 23
+Button/colors/icon_normal_color = Color(0.137255, 0.47451, 0.666667, 1)
+Button/styles/normal = SubResource("StyleBoxFlat_njv2a")
+Label/styles/normal = SubResource("StyleBoxFlat_h50tb")

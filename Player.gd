@@ -14,6 +14,18 @@ class_name Player
 @export var dash_speed = 2500
 @export var dash_duration = 0.1
 
+@export var OrganicLimit = 50
+@export var Organic = 0
+var OrganicDisplay = 0
+
+@export var InorganicLimit= 50
+@export var Inorganic = 0
+var InorganicDisplay = 0
+
+@export var DangerLimit = 30
+@export var Danger = 0
+var DangerDisplay = 0
+
 @onready var timer = $"."
 
 var is_in_water : bool = false
@@ -30,7 +42,8 @@ func _ready():
 	area_magnet.shape.radius *= 1
 
 func _physics_process(delta):
-
+	#print (OrganicDisplay)
+	
 	var direction_x = Input.get_axis("Left", "Right")
 	var direction_y = Input.get_axis("Up", "Down")
 	
@@ -101,7 +114,39 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	
+func organic_limit():
+	return OrganicLimit
+func organic():
+	return Organic
+func organic_display():
+	return OrganicDisplay
+func add_organic(add):
+	Organic += add
+	OrganicDisplay = (Organic / OrganicLimit) * 100
+	return Organic
+
+func inorganic_limit():
+	return InorganicLimit
+func inorganic():
+	return Inorganic
+func inorganic_display():
+	return InorganicDisplay
+func add_inorganic(add):
+	Inorganic += add
+	InorganicDisplay = (Inorganic / InorganicLimit) * 100
+	return Organic
+
+func danger_limit():
+	return DangerLimit
+func danger():
+	return Danger
+func danger_display():
+	return DangerDisplay
+func add_danger(add):
+	Danger += add
+	DangerDisplay = (Danger / DangerLimit) * 100
+	return Danger
+
 func _on_water_detection_2d_water_state_changed(is_in_water : bool):
 	self.is_in_water = is_in_water
 

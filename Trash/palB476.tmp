@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7h1qjy4u2sbk"]
+[gd_scene load_steps=5 format=3 uid="uid://c7h1qjy4u2sbk"]
 
+[ext_resource type="Script" path="res://Trash/ItemMagnet.gd" id="1_3powr"]
 [ext_resource type="Texture2D" uid="uid://dd0ao70sic08c" path="res://Trash/palmleaf.png" id="1_b3i8i"]
 [ext_resource type="Script" path="res://Trash/palm_leaf.gd" id="1_livni"]
 
@@ -9,6 +10,7 @@
 script = ExtResource("1_livni")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Trash"]]
+script = ExtResource("1_3powr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 rotation = -0.837758
