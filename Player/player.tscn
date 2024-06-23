@@ -837,7 +837,7 @@ scale = Vector2(0.14, 0.14)
 [node name="TouchScreenButton" type="TouchScreenButton" parent="ControlMenu/Test/UI/Right Button2"]
 position = Vector2(5778.57, 2985.71)
 texture_normal = ExtResource("9_ijxqg")
-texture_pressed = ExtResource("8_2klaa")
+texture_pressed = ExtResource("9_ijxqg")
 action = "Dash"
 
 [node name="Timer" type="Timer" parent="."]
