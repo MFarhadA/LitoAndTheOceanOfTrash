@@ -1,0 +1,38 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b87hk5l4fdujd"]
+
+[ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="1_0mg0b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxilt"]
+bg_color = Color(0.317647, 0.698039, 0.364706, 1)
+border_color = Color(0.101961, 0.380392, 0.619608, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhipe"]
+bg_color = Color(0.317647, 0.698039, 0.364706, 1)
+border_width_bottom = 7
+border_color = Color(0.1944, 0.54, 0.23472, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xornc"]
+bg_color = Color(0.196078, 0.541176, 0.235294, 1)
+border_color = Color(0.317647, 0.698039, 0.364706, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxb5q"]
+
+[resource]
+default_font = ExtResource("1_0mg0b")
+default_font_size = 32
+Button/styles/hover = SubResource("StyleBoxFlat_qxilt")
+Button/styles/normal = SubResource("StyleBoxFlat_lhipe")
+Button/styles/pressed = SubResource("StyleBoxFlat_xornc")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_vxb5q")

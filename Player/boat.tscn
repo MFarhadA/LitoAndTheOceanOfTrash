@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bupb4j8xjplal"]
+
+[ext_resource type="Script" path="res://Ocean/Boat.gd" id="1_jsbok"]
+[ext_resource type="Texture2D" uid="uid://diecigklwosh6" path="res://Interaction/BoatStore/ship.png" id="2_fgokq"]
+
+[node name="Boat" type="CharacterBody2D"]
+position = Vector2(1511.15, 226.5)
+scale = Vector2(0.232017, 0.232017)
+script = ExtResource("1_jsbok")
+
+[node name="Ship" type="Sprite2D" parent="."]
+z_index = 10
+texture = ExtResource("2_fgokq")

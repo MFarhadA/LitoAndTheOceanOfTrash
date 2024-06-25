@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://vfv4daj8tbb"]
 
-[ext_resource type="Script" path="res://Interaction/BoatStore/BoatStore.gd" id="1_u0dao"]
+[ext_resource type="Script" path="res://Interaction/Island/Island go.gd" id="1_pv01a"]
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="2_yej1h"]
 [ext_resource type="Theme" uid="uid://c30qsbfwolqdo" path="res://Interaction/storetheme.tres" id="3_tapgq"]
 
@@ -15,7 +15,7 @@ bg_color = Color(0.2394, 0.36309, 0.63, 1)
 
 [node name="Island" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_u0dao")
+script = ExtResource("1_pv01a")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8

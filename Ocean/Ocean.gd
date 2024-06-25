@@ -12,6 +12,7 @@ var danger2 = preload("res://Trash/accu_battery.tscn")
 @onready var organic_label = $Player/UI/OrganicLabel
 @onready var inorganic_label = $Player/UI/InorganicLabel
 @onready var danger_label = $Player/UI/DangerLabel
+@onready var move_label = $Player/UI/trashmove
 
 var spawn : bool = true
 
@@ -63,16 +64,20 @@ func _process(delta):
 	update_danger_label()
 
 func update_organic_label():
-	organic_label.text = "Organik\n" + str(player.organic_display()) + "%\n(" + str(player.organic()) + "/" + str(player.organic_limit()) + ")"
+	organic_label.text = "Organik\n" + "(" + str(player.organic()) + "/" + str(player.organic_limit()) + ")"
 	if player.organic() == player.organic_limit():
 		organic_label.text += "\nPENUH!"
 
 func update_inorganic_label():
-	inorganic_label.text = "Inorganik\n" + str(player.inorganic_display()) + "%\n(" + str(player.inorganic()) + "/" + str(player.inorganic_limit()) + ")"
+	inorganic_label.text = "Inorganik\n" + "(" + str(player.inorganic()) + "/" + str(player.inorganic_limit()) + ")"
 	if player.inorganic() == player.inorganic_limit():
 		inorganic_label.text += "\nPENUH!"
 
 func update_danger_label():
-	danger_label.text = "B3\n" + str(player.danger_display()) + "%\n(" + str(player.danger()) + "/" + str(player.danger_limit()) + ")"
+	danger_label.text = "B3\n" + "(" + str(player.danger()) + "/" + str(player.danger_limit()) + ")"
 	if player.danger() == player.danger_limit():
 		danger_label.text += "\nPENUH!"
+
+
+func _on_boat_area_body_entered(body):
+	pass # Replace with function body.

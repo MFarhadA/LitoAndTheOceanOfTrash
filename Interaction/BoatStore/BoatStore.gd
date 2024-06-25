@@ -10,13 +10,13 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
 func _on_cancel_pressed():
 	get_tree().paused = false
 	visible = false
 
+func _on_button_pressed():
+	get_tree().change_scene_to_file("res://Ocean/Ocean.tscn")
+
 
 func _on_pergi_pressed():
-	get_tree().change_scene_to_file("res://Ocean/Ocean.tscn")
 	pass # Replace with function body.

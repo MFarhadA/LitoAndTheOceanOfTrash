@@ -98,3 +98,4 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -11,10 +11,13 @@ class_name Player
 @export var SWIM_GRAVITY : float = 0.001
 @export var SWIM_VELOCITY_CAP : float = 100.0
 
+@export var money = 100000
+@onready var money_display = $ControlMenu/Test/UI/coin_display
+
 @export var dash_speed = 2500
 @export var dash_duration = 0.1
 
-@export var OrganicLimit = 50
+@export var OrganicLimit = 12
 @export var Organic = 0
 var OrganicDisplay = 0
 
@@ -42,7 +45,6 @@ func _ready():
 	area_magnet.shape.radius *= 1
 
 func _physics_process(delta):
-	#print (OrganicDisplay)
 	
 	var direction_x = Input.get_axis("Left", "Right")
 	var direction_y = Input.get_axis("Up", "Down")
@@ -114,6 +116,18 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+func _process(delta):
+	_money_label()
+	update_displays()
+	
+func _money():
+	return money
+func _money_label():
+	$ControlMenu/Test/UI/coin_display.text = str(money)
+func _money_buy(buy):
+	money -= buy
+	return money
+
 func organic_limit():
 	return OrganicLimit
 func organic():
@@ -122,7 +136,11 @@ func organic_display():
 	return OrganicDisplay
 func add_organic(add):
 	Organic += add
-	OrganicDisplay = (Organic / OrganicLimit) * 100
+	update_displays()
+	return Organic
+func move_organic(substract):
+	Organic -= substract
+	update_displays()
 	return Organic
 
 func inorganic_limit():
@@ -133,7 +151,11 @@ func inorganic_display():
 	return InorganicDisplay
 func add_inorganic(add):
 	Inorganic += add
-	InorganicDisplay = (Inorganic / InorganicLimit) * 100
+	update_displays()
+	return Organic
+func move_inorganic(substract):
+	Inorganic -= substract
+	update_displays()
 	return Organic
 
 func danger_limit():
@@ -144,8 +166,17 @@ func danger_display():
 	return DangerDisplay
 func add_danger(add):
 	Danger += add
-	DangerDisplay = (Danger / DangerLimit) * 100
+	update_displays()
 	return Danger
+func move_danger(substract):
+	Danger -= substract
+	update_displays()
+	return Organic
+
+func update_displays():
+	OrganicDisplay = (Organic / float(OrganicLimit)) * 100
+	InorganicDisplay = (Inorganic / float(InorganicLimit)) * 100
+	DangerDisplay = (Danger / float(DangerLimit)) * 100
 
 func _on_water_detection_2d_water_state_changed(is_in_water : bool):
 	self.is_in_water = is_in_water

@@ -19,3 +19,8 @@ func _physics_process(delta):
 		position = position.lerp(target_position, smooth_factor)
 		velocity = (target_position - position).normalized() * SPEED
 		move_and_slide()
+		
+	if velocity.x < 0.3:
+		$Sprite2D.flip_h = false
+	elif velocity.x > -0.3:
+		$Sprite2D.flip_h = true

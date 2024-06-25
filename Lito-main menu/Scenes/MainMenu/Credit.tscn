@@ -1,40 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bls481nb3ka4f"]
+[gd_scene load_steps=5 format=3 uid="uid://bls481nb3ka4f"]
 
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="1_bxjb5"]
-[ext_resource type="Script" path="res://Lito-main menu/Scenes/Level/VBoxContainer.gd" id="2_uaqy4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76x33"]
-bg_color = Color(0.360784, 0.623529, 0.772549, 1)
-border_color = Color(0.101961, 0.380392, 0.619608, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n7yif"]
-bg_color = Color(0.137255, 0.47451, 0.666667, 1)
-border_width_bottom = 7
-border_color = Color(0.101961, 0.380392, 0.619608, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfynw"]
-bg_color = Color(0.141176, 0.4, 0.54902, 1)
-border_color = Color(0.101961, 0.380392, 0.619608, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8i4x"]
-
-[sub_resource type="Theme" id="Theme_3s06b"]
-Button/styles/hover = SubResource("StyleBoxFlat_76x33")
-Button/styles/normal = SubResource("StyleBoxFlat_n7yif")
-Button/styles/pressed = SubResource("StyleBoxFlat_lfynw")
-CheckBox/styles/normal = SubResource("StyleBoxFlat_y8i4x")
+[ext_resource type="Script" path="res://Lito-main menu/Scenes/MainMenu/Credit.gd" id="1_k52q8"]
+[ext_resource type="Theme" uid="uid://bqoyhdekhayqr" path="res://Lito-main menu/Scenes/MainMenu/red_button.tres" id="3_2tebx"]
 
 [sub_resource type="SystemFont" id="SystemFont_ibkbe"]
 font_names = PackedStringArray("Creato Display")
@@ -43,12 +11,14 @@ font_stretch = 150
 hinting = 0
 
 [node name="Control" type="Control"]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k52q8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -116,14 +86,14 @@ offset_left = 37.695
 offset_top = 29.91
 offset_right = 149.695
 offset_bottom = 78.91
-script = ExtResource("2_uaqy4")
+theme = ExtResource("3_2tebx")
 
 [node name="Back_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = SubResource("Theme_3s06b")
+theme = ExtResource("3_2tebx")
 theme_override_fonts/font = SubResource("SystemFont_ibkbe")
 theme_override_font_sizes/font_size = 30
 text = " < Back "
 
-[connection signal="pressed" from="VBoxContainer/Back_button" to="VBoxContainer" method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back_button" to="." method="_on_back_button_pressed"]

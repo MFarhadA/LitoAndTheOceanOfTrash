@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://tg8vw8wxhvo6"]
+
+[ext_resource type="Script" path="res://Lito-main menu/Scenes/MainMenu/pause_menu.gd" id="1_i8v68"]
+[ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="1_pfawf"]
+[ext_resource type="Theme" uid="uid://decb5nyu4rg66" path="res://Lito-main menu/Scenes/MainMenu/main_menu.tres" id="4_1fjbu"]
+[ext_resource type="Theme" uid="uid://bqoyhdekhayqr" path="res://Lito-main menu/Scenes/MainMenu/red_button.tres" id="4_xsftr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w8fje"]
+bg_color = Color(0.67, 0.268, 0.268, 1)
+border_width_bottom = 7
+border_color = Color(0.5, 0.205, 0.209917, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ey2n"]
+bg_color = Color(0.67, 0.268, 0.268, 1)
+border_width_bottom = 7
+border_color = Color(0.670588, 0.266667, 0.266667, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5ura"]
+bg_color = Color(0.498039, 0.203922, 0.207843, 1)
+border_width_bottom = 7
+border_color = Color(0.670588, 0.266667, 0.266667, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8v68")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = -10.0
+offset_top = -47.0
+offset_right = 1160.0
+offset_bottom = 664.0
+
+[node name="menu_button" type="VBoxContainer" parent="CanvasLayer"]
+z_index = 10
+anchors_preset = -1
+anchor_left = 0.313368
+anchor_top = 0.273148
+anchor_right = 0.684896
+anchor_bottom = 0.683642
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Play_button" type="Button" parent="CanvasLayer/menu_button"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_1fjbu")
+theme_override_fonts/font = ExtResource("1_pfawf")
+theme_override_font_sizes/font_size = 30
+text = "LANJUTKAN"
+
+[node name="Setting_button" type="Button" parent="CanvasLayer/menu_button"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_1fjbu")
+theme_override_fonts/font = ExtResource("1_pfawf")
+theme_override_font_sizes/font_size = 30
+text = "PENGATURAN"
+
+[node name="Exit_button" type="Button" parent="CanvasLayer/menu_button"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("4_xsftr")
+theme_override_fonts/font = ExtResource("1_pfawf")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_w8fje")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ey2n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c5ura")
+text = "KELUAR"
+
+[connection signal="pressed" from="CanvasLayer/menu_button/Play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/menu_button/Setting_button" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/menu_button/Exit_button" to="." method="_on_exit_button_pressed"]

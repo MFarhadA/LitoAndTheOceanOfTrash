@@ -1,17 +1,18 @@
 extends Area2D
 
-@onready var TrashStore = $TrashStore
-
+var is_in_trash_store = false
 
 func _ready():
-	TrashStore.visible = false
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	connect("body_exited", Callable(self, "_on_body_exited"))
 	
 func _on_body_entered(body):
 	if body.name == "Player":
-		TrashStore.visible = true
+		is_in_trash_store = true
 
 func _on_body_exited(body):
 	if body.name == "Player":
-		TrashStore.visible = false
+		is_in_trash_store = false
+
+func _is_in_trash_store():
+	return is_in_trash_store

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d2qgptqpy05yw"]
 
 [ext_resource type="Script" path="res://Lito-main menu/Scenes/IntroMenu/IntroMenu.gd" id="1_1adid"]
-[ext_resource type="Texture2D" uid="uid://bisd55tx3j51j" path="res://Lito-main menu/logo.png" id="2_lq4op"]
+[ext_resource type="Texture2D" uid="uid://d1y0cimsk1c4v" path="res://Lito-main menu/logo_b.png" id="2_8sxvv"]
 
 [sub_resource type="Animation" id="Animation_a2hhv"]
 resource_name = "Fade In"
@@ -65,12 +65,12 @@ offset_left = -42.0
 offset_top = -22.0
 offset_right = 1172.0
 offset_bottom = 680.0
-color = Color(0, 0, 0, 1)
 
 [node name="Logo" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(588, 308)
-texture = ExtResource("2_lq4op")
+position = Vector2(568, 320)
+scale = Vector2(0.459259, 0.459259)
+texture = ExtResource("2_8sxvv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 3

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dxx5y2vag6ot5"]
+[gd_scene load_steps=42 format=3 uid="uid://dxx5y2vag6ot5"]
 
 [ext_resource type="Script" path="res://Ocean/Ocean.gd" id="1_2skp5"]
 [ext_resource type="Texture2D" uid="uid://bfskc3y5w4p5" path="res://Ocean/ocean1.png" id="2_bg0hs"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://d0ecvjcheyyv5" path="res://Ocean/ocean5.png" id="6_dndld"]
 [ext_resource type="Theme" uid="uid://dr5h70dwsaamj" path="res://Lito-main menu/Assets/button.tres" id="6_mfm6v"]
 [ext_resource type="LabelSettings" uid="uid://hh5n7do0w5g3" path="res://Lito-main menu/Assets/inventory_label.tres" id="7_yuf1i"]
+[ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="16_1xhaa"]
+[ext_resource type="Script" path="res://Ocean/Boat.gd" id="16_q5qcs"]
+[ext_resource type="Script" path="res://Ocean/BoatArea.gd" id="17_yvi36"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hs7vi"]
 bg_color = Color(0.84, 0.616, 0, 1)
@@ -26,11 +29,82 @@ bg_color = Color(0.2025, 0.47625, 0.75, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2k6w"]
 bg_color = Color(0.282353, 0.572549, 0.113725, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxilt"]
+bg_color = Color(0.670588, 0.266667, 0.266667, 1)
+border_color = Color(0.670588, 0.266667, 0.266667, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhipe"]
+bg_color = Color(0.670588, 0.266667, 0.266667, 1)
+border_width_bottom = 7
+border_color = Color(0.498039, 0.203922, 0.207843, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xornc"]
+bg_color = Color(0.498039, 0.203922, 0.207843, 1)
+border_color = Color(0.670588, 0.266667, 0.266667, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxb5q"]
+
+[sub_resource type="Theme" id="Theme_vdhwg"]
+default_font = ExtResource("16_1xhaa")
+default_font_size = 26
+Button/font_sizes/font_size = 16
+Button/styles/hover = SubResource("StyleBoxFlat_qxilt")
+Button/styles/normal = SubResource("StyleBoxFlat_lhipe")
+Button/styles/pressed = SubResource("StyleBoxFlat_xornc")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_vxb5q")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mn6v4"]
+bg_color = Color(0.317647, 0.698039, 0.364706, 1)
+border_color = Color(0.101961, 0.380392, 0.619608, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qb2co"]
+bg_color = Color(0.317647, 0.698039, 0.364706, 1)
+border_width_bottom = 7
+border_color = Color(0.1944, 0.54, 0.23472, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kq3a1"]
+bg_color = Color(0.196078, 0.541176, 0.235294, 1)
+border_color = Color(0.317647, 0.698039, 0.364706, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12w7n"]
+
+[sub_resource type="Theme" id="Theme_30ij3"]
+default_font = ExtResource("16_1xhaa")
+default_font_size = 29
+Button/styles/hover = SubResource("StyleBoxFlat_mn6v4")
+Button/styles/normal = SubResource("StyleBoxFlat_qb2co")
+Button/styles/pressed = SubResource("StyleBoxFlat_kq3a1")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_12w7n")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eosy4"]
-size = Vector2(1783, 43)
+size = Vector2(1783, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cap3j"]
-size = Vector2(1771, 925)
+size = Vector2(1771, 913.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgreq"]
 size = Vector2(1865, 319)
@@ -38,8 +112,26 @@ size = Vector2(1865, 319)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lg6da"]
 size = Vector2(40, 1448.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pu7k"]
+size = Vector2(1137.85, 482.723)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yxds"]
 size = Vector2(300, 69.0002)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xodhe"]
+line_spacing = 1.0
+font = ExtResource("16_1xhaa")
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_veoyi"]
+line_spacing = 1.0
+font = ExtResource("16_1xhaa")
+font_size = 56
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqf3u"]
+line_spacing = 1.0
+font = ExtResource("16_1xhaa")
+font_size = 56
 
 [node name="Ocean" type="Node2D"]
 script = ExtResource("1_2skp5")
@@ -170,20 +262,54 @@ label_settings = ExtResource("7_yuf1i")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="back" type="Button" parent="Player/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 256.0
+offset_top = -290.0
+offset_right = 548.0
+offset_bottom = -237.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vdhwg")
+theme_type_variation = &"FlatButton"
+text = "KEMBALI KE PULAU"
+
+[node name="trashmove" type="Button" parent="Player/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = 204.0
+offset_right = 172.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_30ij3")
+theme_type_variation = &"FlatButton"
+text = "PINDAHKAN SAMPAH"
+
 [node name="Border" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 0
 
 [node name="border" type="CollisionShape2D" parent="Border"]
-position = Vector2(883, 354.5)
+position = Vector2(883, 360)
 shape = SubResource("RectangleShape2D_eosy4")
 
 [node name="Water" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 0
 
 [node name="water" type="CollisionShape2D" parent="Water"]
-position = Vector2(870, 795)
+position = Vector2(870, 800.75)
 shape = SubResource("RectangleShape2D_cap3j")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -205,15 +331,82 @@ position = Vector2(979.508, -1738.13)
 scale = Vector2(3.04668, 3.04668)
 shape = SubResource("RectangleShape2D_lg6da")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Boat" type="CharacterBody2D" parent="."]
 position = Vector2(1511.15, 226.5)
 scale = Vector2(0.232017, 0.232017)
+script = ExtResource("16_q5qcs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Ship" type="Sprite2D" parent="Boat"]
+z_index = 10
+texture = ExtResource("6_167g0")
+
+[node name="BoatArea" type="Area2D" parent="Boat"]
+script = ExtResource("17_yvi36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boat/BoatArea"]
+position = Vector2(55.3843, 127.146)
+shape = SubResource("RectangleShape2D_5pu7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boat"]
 position = Vector2(3.66504, 482.718)
 scale = Vector2(4.31003, 4.31003)
 shape = SubResource("RectangleShape2D_6yxds")
 
-[node name="Ship" type="Sprite2D" parent="CharacterBody2D"]
-z_index = 10
-texture = ExtResource("6_167g0")
+[node name="DangerLabel" type="Label" parent="Boat"]
+z_index = 100
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 176.065
+offset_top = 334.027
+offset_right = 486.065
+offset_bottom = 454.027
+grow_horizontal = 2
+size_flags_horizontal = 2
+theme = ExtResource("6_mfm6v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hs7vi")
+text = "B3"
+label_settings = SubResource("LabelSettings_xodhe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InorganicLabel" type="Label" parent="Boat"]
+z_index = 100
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -164.0
+offset_top = 334.0
+offset_right = 142.0
+offset_bottom = 455.0
+grow_horizontal = 2
+size_flags_horizontal = 2
+theme = ExtResource("6_mfm6v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bkm25")
+text = "Inorganic"
+label_settings = SubResource("LabelSettings_veoyi")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OrganicLabel" type="Label" parent="Boat"]
+z_index = 100
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -479.06
+offset_top = 334.027
+offset_right = -190.06
+offset_bottom = 454.027
+grow_horizontal = 2
+size_flags_horizontal = 2
+theme = ExtResource("6_mfm6v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r2k6w")
+text = "Organic"
+label_settings = SubResource("LabelSettings_dqf3u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Player/UI/back" to="Boat" method="_on_back_pressed"]
+[connection signal="pressed" from="Player/UI/trashmove" to="Boat" method="_on_trashmove_pressed"]
+[connection signal="body_entered" from="Boat/BoatArea" to="Boat/BoatArea" method="_on_body_entered"]
+[connection signal="body_exited" from="Boat/BoatArea" to="Boat/BoatArea" method="_on_body_exited"]
