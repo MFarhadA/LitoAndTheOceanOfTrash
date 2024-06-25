@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cox4vp7vm1fbh"]
+[gd_scene load_steps=15 format=3 uid="uid://cox4vp7vm1fbh"]
 
 [ext_resource type="Script" path="res://Interaction/DivingStore/DivingStore.gd" id="1_hwmmh"]
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="1_yh6cd"]
@@ -7,15 +7,51 @@
 [ext_resource type="Texture2D" uid="uid://b2s2h8m2qxuhv" path="res://Interaction/DivingStore/fin2.png" id="4_awgqn"]
 [ext_resource type="Texture2D" uid="uid://dqder2380s6yt" path="res://Interaction/DivingStore/fin3.png" id="5_dnnwe"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nd6pm"]
+bg_color = Color(0.498219, 0.177684, 0.178563, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7x3u8"]
 bg_color = Color(0.63, 0.2394, 0.2394, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnrfx"]
+bg_color = Color(0.498219, 0.177684, 0.178563, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [sub_resource type="Theme" id="Theme_ja0x6"]
+Button/styles/hover = SubResource("StyleBoxFlat_nd6pm")
 Button/styles/normal = SubResource("StyleBoxFlat_7x3u8")
+Button/styles/pressed = SubResource("StyleBoxFlat_pnrfx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt8sm"]
+bg_color = Color(0.19818, 0.540441, 0.29365, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyulh"]
+bg_color = Color(0.319476, 0.70002, 0.3663, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5kq5"]
+bg_color = Color(0.19818, 0.540441, 0.29365, 1)
+
+[sub_resource type="Theme" id="Theme_s0lbv"]
+Button/styles/hover = SubResource("StyleBoxFlat_jt8sm")
+Button/styles/normal = SubResource("StyleBoxFlat_jyulh")
+Button/styles/pressed = SubResource("StyleBoxFlat_o5kq5")
 
 [node name="DivingShop" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_hwmmh")
+metadata/_edit_horizontal_guides_ = [140.0]
+metadata/_edit_vertical_guides_ = [146.0]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
@@ -23,42 +59,44 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -526.0
-offset_top = -189.0
-offset_right = 526.0
-offset_bottom = 232.0
+offset_left = -392.0
+offset_top = -183.0
+offset_right = 376.0
+offset_bottom = 193.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0705882, 0.262745, 0.411765, 1)
 
 [node name="cancel" type="Button" parent="."]
 anchors_preset = -1
-anchor_left = 0.876
-anchor_top = 0.268
-anchor_right = 0.876
-anchor_bottom = 0.268
-offset_left = -65.152
-offset_top = -21.664
-offset_right = 64.848
-offset_bottom = 21.336
+anchor_left = 0.877
+anchor_top = 0.195
+anchor_right = 0.877
+anchor_bottom = 0.195
+offset_left = -103.304
+offset_top = -60.36
+offset_right = -68.304
+offset_bottom = -24.36
+scale = Vector2(1.215, 1.215)
 theme = SubResource("Theme_ja0x6")
 theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("1_yh6cd")
-text = "TUTUP"
+theme_override_font_sizes/font_size = 20
+text = "X"
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.275
+anchor_top = 0.204
 anchor_right = 0.5
-anchor_bottom = 0.275
-offset_left = -272.5
-offset_top = -56.2
-offset_right = 272.5
-offset_bottom = 41.8
+anchor_bottom = 0.204
+offset_left = 92.0
+offset_top = 12.808
+offset_right = 348.0
+offset_bottom = 110.808
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("1_yh6cd")
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 32
 text = "DIVING STORE"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -69,10 +107,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -504.0
-offset_top = -150.5
-offset_right = 504.0
-offset_bottom = 216.5
+offset_left = -344.0
+offset_top = -111.0
+offset_right = 336.0
+offset_bottom = 153.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_dhqqw")
@@ -82,33 +120,27 @@ theme_override_fonts/font = ExtResource("1_yh6cd")
 layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Kaki Katak"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -488.0
-offset_top = -149.5
-offset_right = 488.0
-offset_bottom = 149.5
-grow_horizontal = 2
-grow_vertical = 2
+clip_contents = false
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 664.0
+offset_bottom = 216.0
 
 [node name="control" type="Node2D" parent="TabContainer/Kaki Katak/RichTextLabel"]
-position = Vector2(8, -6.5)
+position = Vector2(-158, -55)
 
 [node name="Panel" type="Panel" parent="TabContainer/Kaki Katak/RichTextLabel/control"]
-offset_left = 11.0
-offset_top = 12.0
-offset_right = 309.0
-offset_bottom = 299.0
+offset_left = 172.0
+offset_top = 62.0
+offset_right = 356.0
+offset_bottom = 256.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel"]
-position = Vector2(140, 100)
-scale = Vector2(0.264151, 0.264151)
+position = Vector2(92, 64.5)
+scale = Vector2(0.172166, 0.163522)
 texture = ExtResource("3_r8g3i")
 
 [node name="Label" type="Label" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel"]
@@ -119,37 +151,39 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -128.0
-offset_top = 37.5
+offset_top = 12.5
 offset_right = 127.0
-offset_bottom = 83.5
+offset_bottom = 58.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_yh6cd")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 16
 text = "SANDAL JEPIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 235.0
-offset_right = 264.0
-offset_bottom = 270.0
+offset_left = 33.0
+offset_top = 153.0
+offset_right = 153.0
+offset_bottom = 180.0
+theme = SubResource("Theme_s0lbv")
 theme_override_fonts/font = ExtResource("1_yh6cd")
-text = "BUY"
+theme_override_font_sizes/font_size = 15
+text = "$500 "
 
 [node name="Panel2" type="Panel" parent="TabContainer/Kaki Katak/RichTextLabel/control"]
-offset_left = 331.0
-offset_top = 12.0
-offset_right = 629.0
-offset_bottom = 299.0
+offset_left = 388.0
+offset_top = 62.0
+offset_right = 573.0
+offset_bottom = 256.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel2"]
-position = Vector2(140, 100)
-scale = Vector2(0.264151, 0.264151)
+position = Vector2(95.5, 64)
+scale = Vector2(0.161186, 0.165282)
 texture = ExtResource("4_awgqn")
 
 [node name="Label" type="Label" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel2"]
@@ -159,14 +193,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = 37.5
-offset_right = 127.0
-offset_bottom = 83.5
+offset_left = -125.0
+offset_top = 12.0
+offset_right = 130.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_yh6cd")
-theme_override_font_sizes/font_size = 31
+theme_override_font_sizes/font_size = 16
 text = "KAKI BEBEK"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -174,23 +208,25 @@ vertical_alignment = 1
 [node name="Button" type="Button" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel2"]
 layout_mode = 0
 offset_left = 31.0
-offset_top = 235.0
-offset_right = 264.0
-offset_bottom = 270.0
+offset_top = 154.0
+offset_right = 156.0
+offset_bottom = 181.0
+theme = SubResource("Theme_s0lbv")
 theme_override_fonts/font = ExtResource("1_yh6cd")
-text = "BUY"
+theme_override_font_sizes/font_size = 15
+text = "$1000"
 
 [node name="Panel3" type="Panel" parent="TabContainer/Kaki Katak/RichTextLabel/control"]
-offset_left = 651.0
-offset_top = 12.0
-offset_right = 949.0
-offset_bottom = 299.0
+offset_left = 604.0
+offset_top = 62.0
+offset_right = 796.0
+offset_bottom = 256.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel3"]
-position = Vector2(140, 89)
-scale = Vector2(0.180064, 0.180064)
+position = Vector2(100, 63)
+scale = Vector2(0.105784, 0.119373)
 texture = ExtResource("5_dnnwe")
 
 [node name="Label" type="Label" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel3"]
@@ -200,27 +236,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = 23.5
-offset_right = 127.0
-offset_bottom = 90.5
+offset_left = -112.0
+offset_top = 9.0
+offset_right = 118.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_yh6cd")
-theme_override_font_sizes/font_size = 21
-text = "KAKI KATAK
-PROFESSIONAL"
+theme_override_font_sizes/font_size = 12
+text = "KAKI KATAK PROFESSIONAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="TabContainer/Kaki Katak/RichTextLabel/control/Panel3"]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 235.0
-offset_right = 264.0
-offset_bottom = 270.0
+offset_left = 37.0
+offset_top = 152.0
+offset_right = 163.0
+offset_bottom = 180.0
+theme = SubResource("Theme_s0lbv")
 theme_override_fonts/font = ExtResource("1_yh6cd")
-text = "BUY"
+theme_override_font_sizes/font_size = 15
+text = "$2000"
 
 [node name="Tabung Oksigen" type="TabBar" parent="TabContainer"]
 visible = false

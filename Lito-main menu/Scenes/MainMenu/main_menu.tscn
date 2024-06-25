@@ -102,7 +102,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_ef7g1")
 theme_override_fonts/font = ExtResource("3_b471l")
 theme_override_font_sizes/font_size = 30
-text = "START"
+text = "MULAI"
 
 [node name="Setting_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -110,7 +110,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_ef7g1")
 theme_override_fonts/font = ExtResource("3_b471l")
 theme_override_font_sizes/font_size = 30
-text = "SETTING"
+text = "SETELAN"
 
 [node name="Credit_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -118,7 +118,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_ef7g1")
 theme_override_fonts/font = ExtResource("3_b471l")
 theme_override_font_sizes/font_size = 30
-text = "CREDIT"
+text = "KREDIT"
 
 [node name="Exit_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -126,8 +126,7 @@ size_flags_vertical = 3
 theme = SubResource("Theme_ef7g1")
 theme_override_fonts/font = ExtResource("3_b471l")
 theme_override_font_sizes/font_size = 30
-text = "QUIT
-"
+text = "KELUAR"
 
 [connection signal="pressed" from="VBoxContainer/Play_button" to="VBoxContainer" method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Setting_button" to="VBoxContainer" method="_on_setting_button_pressed"]

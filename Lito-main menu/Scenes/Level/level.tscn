@@ -14,10 +14,10 @@ corner_radius_bottom_left = 15
 bg_color = Color(0.137255, 0.47451, 0.666667, 1)
 border_width_bottom = 7
 border_color = Color(0.101961, 0.380392, 0.619608, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn6s7"]
 bg_color = Color(0.141176, 0.4, 0.54902, 1)
@@ -67,6 +67,6 @@ size_flags_horizontal = 0
 theme = SubResource("Theme_8hbny")
 theme_override_fonts/font = SubResource("SystemFont_qlhtk")
 theme_override_font_sizes/font_size = 30
-text = " < Back "
+text = " < Kembali  "
 
 [connection signal="pressed" from="VBoxContainer/Back_button" to="VBoxContainer" method="_on_back_button_pressed"]

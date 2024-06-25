@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="1_qnjmx"]
 [ext_resource type="Script" path="res://Lito-main menu/Scenes/Level/VBoxContainer.gd" id="2_x5n11"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxilt"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtf8j"]
 bg_color = Color(0.360784, 0.623529, 0.772549, 1)
 border_color = Color(0.101961, 0.380392, 0.619608, 1)
 corner_radius_top_left = 15
@@ -11,16 +11,16 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhipe"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ary2y"]
 bg_color = Color(0.137255, 0.47451, 0.666667, 1)
 border_width_bottom = 7
 border_color = Color(0.101961, 0.380392, 0.619608, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xornc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn6s7"]
 bg_color = Color(0.141176, 0.4, 0.54902, 1)
 border_color = Color(0.101961, 0.380392, 0.619608, 1)
 corner_radius_top_left = 15
@@ -28,13 +28,13 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxb5q"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqaj2"]
 
-[sub_resource type="Theme" id="Theme_4ldpv"]
-Button/styles/hover = SubResource("StyleBoxFlat_qxilt")
-Button/styles/normal = SubResource("StyleBoxFlat_lhipe")
-Button/styles/pressed = SubResource("StyleBoxFlat_xornc")
-CheckBox/styles/normal = SubResource("StyleBoxFlat_vxb5q")
+[sub_resource type="Theme" id="Theme_7bnue"]
+Button/styles/hover = SubResource("StyleBoxFlat_rtf8j")
+Button/styles/normal = SubResource("StyleBoxFlat_ary2y")
+Button/styles/pressed = SubResource("StyleBoxFlat_qn6s7")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_vqaj2")
 
 [sub_resource type="SystemFont" id="SystemFont_l8e4g"]
 font_names = PackedStringArray("Creato Display")
@@ -66,12 +66,12 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -160.0
 offset_top = 128.0
-offset_right = 168.0
+offset_right = 196.0
 offset_bottom = 264.0
 grow_horizontal = 2
 theme_override_fonts/normal_font = ExtResource("1_qnjmx")
 theme_override_font_sizes/normal_font_size = 80
-text = "SETTING"
+text = "SETELAN"
 tab_size = 5
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
@@ -107,9 +107,9 @@ script = ExtResource("2_x5n11")
 [node name="Back_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-theme = SubResource("Theme_4ldpv")
+theme = SubResource("Theme_7bnue")
 theme_override_fonts/font = SubResource("SystemFont_l8e4g")
 theme_override_font_sizes/font_size = 30
-text = " < Back "
+text = " < Kembali  "
 
 [connection signal="pressed" from="VBoxContainer/Back_button" to="VBoxContainer" method="_on_back_button_pressed"]

@@ -70,6 +70,7 @@ color = Color(0, 0, 0, 1)
 [node name="Logo" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(588, 308)
+scale = Vector2(0.74, 0.74)
 texture = ExtResource("2_lq4op")
 
 [node name="ColorRect" type="ColorRect" parent="."]

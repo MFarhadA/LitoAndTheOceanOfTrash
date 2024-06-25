@@ -1,14 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://vfv4daj8tbb"]
+[gd_scene load_steps=13 format=3 uid="uid://vfv4daj8tbb"]
 
 [ext_resource type="Script" path="res://Interaction/BoatStore/BoatStore.gd" id="1_u0dao"]
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="2_yej1h"]
 [ext_resource type="Theme" uid="uid://c30qsbfwolqdo" path="res://Interaction/storetheme.tres" id="3_tapgq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1f1i"]
+bg_color = Color(0.498219, 0.177684, 0.178563, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7x3u8"]
 bg_color = Color(0.63, 0.2394, 0.2394, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okylx"]
+bg_color = Color(0.498219, 0.177684, 0.178563, 1)
+
 [sub_resource type="Theme" id="Theme_ja0x6"]
+Button/styles/hover = SubResource("StyleBoxFlat_f1f1i")
 Button/styles/normal = SubResource("StyleBoxFlat_7x3u8")
+Button/styles/pressed = SubResource("StyleBoxFlat_okylx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3xmg"]
+bg_color = Color(0.193848, 0.304187, 0.539736, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxdyd"]
+bg_color = Color(0.239216, 0.364706, 0.631373, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iaa40"]
+bg_color = Color(0.193848, 0.304187, 0.539736, 1)
+
+[sub_resource type="Theme" id="Theme_6omme"]
+Button/styles/hover = SubResource("StyleBoxFlat_l3xmg")
+Button/styles/normal = SubResource("StyleBoxFlat_yxdyd")
+Button/styles/pressed = SubResource("StyleBoxFlat_iaa40")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boqwe"]
 bg_color = Color(0.2394, 0.36309, 0.63, 1)
@@ -23,58 +45,62 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -467.0
-offset_top = -152.0
-offset_right = 467.0
-offset_bottom = 120.0
+offset_left = -384.0
+offset_top = -155.0
+offset_right = 384.0
+offset_bottom = 130.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0705882, 0.262745, 0.411765, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="cancel" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.837
-anchor_top = 0.317
-anchor_right = 0.837
-anchor_bottom = 0.317
-offset_left = -65.224
-offset_top = -21.416
-offset_right = 64.776
-offset_bottom = 21.584
-theme = SubResource("Theme_ja0x6")
-theme_type_variation = &"FlatButton"
-theme_override_fonts/font = ExtResource("2_yej1h")
-text = "TUTUP"
-metadata/_edit_use_anchors_ = true
-
 [node name="TabContainer" type="TabContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -457.0
-offset_top = -86.0
-offset_right = 457.0
-offset_bottom = 108.0
+anchors_preset = -1
+anchor_left = 0.501
+anchor_top = 0.479
+anchor_right = 0.501
+anchor_bottom = 0.479
+offset_left = -361.152
+offset_top = -121.392
+offset_right = 361.848
+offset_bottom = 121.608
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_tapgq")
 theme_override_fonts/font = ExtResource("2_yej1h")
 metadata/_edit_use_anchors_ = true
 
-[node name="pergi" type="Button" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -431.0
-offset_top = 331.0
-offset_right = 431.0
-offset_bottom = 407.0
-grow_horizontal = 2
+[node name="cancel" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.628
+anchor_top = 0.549
+anchor_right = 0.628
+anchor_bottom = 0.549
+offset_left = -107.456
+offset_top = -27.752
+offset_right = 108.544
+offset_bottom = 28.248
+theme = SubResource("Theme_ja0x6")
+theme_type_variation = &"FlatButton"
 theme_override_fonts/font = ExtResource("2_yej1h")
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 32
+text = "TIDAK"
+metadata/_edit_use_anchors_ = true
+
+[node name="pergi" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.549
+anchor_right = 0.371
+anchor_bottom = 0.549
+offset_left = -107.392
+offset_top = -27.752
+offset_right = 106.608
+offset_bottom = 28.248
+grow_horizontal = 2
+theme = SubResource("Theme_6omme")
+theme_override_fonts/font = ExtResource("2_yej1h")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_boqwe")
 text = "PERGI"
 metadata/_edit_use_anchors_ = true
@@ -84,10 +110,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -422.0
-offset_top = 252.0
-offset_right = 422.0
-offset_bottom = -324.0
+offset_left = -416.0
+offset_top = 224.0
+offset_right = 428.0
+offset_bottom = -352.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_yej1h")
