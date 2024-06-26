@@ -2,6 +2,10 @@ extends Control
 
 @export var SettingMenu : PackedScene = preload("res://Lito-main menu/Scenes/MainMenu/setting.tscn")
 
+func _unhandled_input(event):
+	if event.is_action_pressed("Menu"):
+		_on_play_button_pressed()
+
 func _on_play_button_pressed():
 	Click.play()
 	get_tree().paused = false

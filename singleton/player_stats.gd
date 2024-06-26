@@ -1,6 +1,6 @@
 extends Node
 
-var save_path = "res://player.save"
+var save_path = "user://player.json"
 
 var money = 40000
 

@@ -1,6 +1,6 @@
 extends Node
 
-var save_path = "res://boat.save"
+var save_path = "user://boat.json"
 
 var Organic = 0
 var Inorganic = 0

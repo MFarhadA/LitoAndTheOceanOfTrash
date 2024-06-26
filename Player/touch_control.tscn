@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctmklppos728c"]
+
+[ext_resource type="Texture2D" uid="uid://bv3t3sfmewevy" path="res://Lito-main menu/Assets/control_jump.png" id="1_6nr4f"]
+[ext_resource type="Texture2D" uid="uid://c00becr4oyt8o" path="res://Lito-main menu/Assets/control_dash.png" id="2_nhaob"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="3_0xt2j"]
+
+[node name="TouchControl" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Right Button" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.14, 0.14)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Right Button"]
+position = Vector2(6928.57, 2357.14)
+texture_normal = ExtResource("1_6nr4f")
+texture_pressed = ExtResource("1_6nr4f")
+action = "Jump"
+
+[node name="Right Button2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.14, 0.14)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Right Button2"]
+position = Vector2(5778.57, 2985.71)
+texture_normal = ExtResource("2_nhaob")
+texture_pressed = ExtResource("2_nhaob")
+action = "Dash"
+
+[node name="Virtual joystick left" parent="." instance=ExtResource("3_0xt2j")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13
+anchor_top = 0.756
+anchor_right = 0.13
+anchor_bottom = 0.756
+offset_left = 22.8
+offset_top = 343.76
+offset_right = 265.8
+offset_bottom = 575.76
+pressed_color = Color(0.137255, 0.47451, 0.666667, 1)
+action_left = "Left"
+action_right = "Right"
+action_up = "Up"
+action_down = "Down"

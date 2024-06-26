@@ -22,7 +22,11 @@ func _physics_process(delta):
 		interact.visible = true
 	else:
 		interact.visible = false
-
+		
+func _input(event):
+	if event.is_action_pressed("Interact"):
+		_on_interact_pressed()
+		
 func _on_interact_pressed():
 	Click.play()
 	get_tree().paused = true

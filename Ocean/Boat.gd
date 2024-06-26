@@ -77,7 +77,11 @@ func update_danger_label():
 	danger_label.text = "B3\n" + "(" + str(BoatStats.Danger) + "/" + str(BoatStats.DangerLimit) + ")"
 	if BoatStats.Danger == BoatStats.DangerLimit:
 		danger_label.text += "\nPENUH!"
-		
+
+func _input(event):
+	if event.is_action_pressed("Interact"):
+		_on_trashmove_pressed()
+
 func _on_trashmove_pressed():
 	Click.play()
 	move_organic(player.organic())
