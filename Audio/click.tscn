@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ibspv3udev3"]
+
+[ext_resource type="AudioStream" uid="uid://de6g3tucv7500" path="res://Audio/click.mp3" id="1_vsd5i"]
+
+[node name="click" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_vsd5i")
+pitch_scale = 1.69
+bus = &"sfx"

@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcab7mg225do8"]
+[gd_scene load_steps=12 format=3 uid="uid://dcab7mg225do8"]
 
 [ext_resource type="Script" path="res://Interaction/BoatStore/BoatStore.gd" id="1_ndm6h"]
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="2_quthi"]
 [ext_resource type="Theme" uid="uid://c30qsbfwolqdo" path="res://Interaction/storetheme.tres" id="3_33gg1"]
 [ext_resource type="Texture2D" uid="uid://diecigklwosh6" path="res://Interaction/BoatStore/ship.png" id="4_8t547"]
 [ext_resource type="Theme" uid="uid://b87hk5l4fdujd" path="res://Lito-main menu/Scenes/MainMenu/buy_button.tres" id="4_645do"]
+[ext_resource type="Theme" uid="uid://drt0akj02hwaf" path="res://Lito-main menu/Assets/equipped.tres" id="5_rw7kp"]
+[ext_resource type="LabelSettings" uid="uid://hh5n7do0w5g3" path="res://Lito-main menu/Assets/inventory_label.tres" id="6_03wjc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7x3u8"]
 bg_color = Color(0.63, 0.2394, 0.2394, 1)
@@ -124,7 +126,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="TabContainer/Perahu/control/Panel"]
+[node name="equipped" type="Label" parent="TabContainer/Perahu/control/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 56.0
+offset_top = 17.5
+offset_right = 239.0
+offset_bottom = 53.5
+grow_horizontal = 2
+theme = ExtResource("5_rw7kp")
+text = "TERBELI"
+label_settings = ExtResource("6_03wjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lvl1" type="Button" parent="TabContainer/Perahu/control/Panel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.251938
@@ -164,7 +182,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="TabContainer/Perahu/control/Panel2"]
+[node name="equipped" type="Label" parent="TabContainer/Perahu/control/Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 56.0
+offset_top = 17.0
+offset_right = 239.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme = ExtResource("5_rw7kp")
+text = "TERBELI"
+label_settings = ExtResource("6_03wjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lvl2" type="Button" parent="TabContainer/Perahu/control/Panel2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.25
@@ -204,7 +238,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="TabContainer/Perahu/control/Panel3"]
+[node name="equipped" type="Label" parent="TabContainer/Perahu/control/Panel3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 56.0
+offset_top = 17.0
+offset_right = 239.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme = ExtResource("5_rw7kp")
+text = "TERBELI"
+label_settings = ExtResource("6_03wjc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lvl3" type="Button" parent="TabContainer/Perahu/control/Panel3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.25
@@ -233,3 +283,6 @@ scale = Vector2(0.149123, 0.165021)
 texture = ExtResource("4_8t547")
 
 [connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="TabContainer/Perahu/control/Panel/lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="TabContainer/Perahu/control/Panel2/lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="TabContainer/Perahu/control/Panel3/lvl3" to="." method="_on_lvl_3_pressed"]

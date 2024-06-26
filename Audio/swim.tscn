@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://g1atvy3m7o85"]
+
+[ext_resource type="AudioStream" uid="uid://d1025repqt21v" path="res://Audio/swim.mp3" id="1_eonkp"]
+
+[node name="swim" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_eonkp")
+pitch_scale = 2.63
+bus = &"sfx"

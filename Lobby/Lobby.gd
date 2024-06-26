@@ -11,6 +11,7 @@ extends Node2D
 @onready var go_island = $Island/Island
 
 func _ready():
+	Bgm.play_music_level()
 	interact.visible = false
 	diving_shop_menu.visible = false
 	boat_store_menu.visible = false
@@ -23,12 +24,17 @@ func _physics_process(delta):
 		interact.visible = false
 
 func _on_interact_pressed():
+	Click.play()
 	get_tree().paused = true
 	if diving_shop._is_in_diving_shop():
 		diving_shop_menu.visible = true
+		interact.visible = false
 	if boat_store._is_in_boat_store():
 		boat_store_menu.visible = true
+		interact.visible = false
 	if trash_store._is_in_trash_store():
 		trash_store_menu.visible = true
+		interact.visible = false
 	if island._is_go():
 		go_island.visible = true
+		interact.visible = false

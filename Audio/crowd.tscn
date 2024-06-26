@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://u1due77u0k4d"]
+
+[ext_resource type="AudioStream" uid="uid://ud4nuqhl0i07" path="res://Audio/crowd.mp3" id="1_sdxtt"]
+
+[node name="crowd" type="AudioStreamPlayer"]
+stream = ExtResource("1_sdxtt")
+volume_db = -21.04
+pitch_scale = 0.84
+stream_paused = true
+bus = &"sfx"

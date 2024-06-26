@@ -17,7 +17,7 @@ func _physics_process(delta):
 				if body.name == "ItemMagnet":
 					getmagnet = true
 	if getmagnet:
-		global_position += (player.position - global_position) / 10
+		global_position += (player.position - global_position) / 5
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("Player"):

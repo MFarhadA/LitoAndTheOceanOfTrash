@@ -78,6 +78,5 @@ func update_danger_label():
 	if player.danger() == player.danger_limit():
 		danger_label.text += "\nPENUH!"
 
-
 func _on_boat_area_body_entered(body):
 	pass # Replace with function body.

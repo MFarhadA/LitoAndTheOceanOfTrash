@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=3 uid="uid://bd2j3uyagvny6"]
+[gd_scene load_steps=128 format=3 uid="uid://bd2j3uyagvny6"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_ndj7k"]
 [ext_resource type="Texture2D" uid="uid://chhsal0hot4ca" path="res://Player/Fall.png" id="2_nex3s"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://Player/Timer.gd" id="9_j7400"]
 [ext_resource type="Script" path="res://Player/Menu.gd" id="12_macvu"]
 [ext_resource type="Theme" uid="uid://decb5nyu4rg66" path="res://Lito-main menu/Scenes/MainMenu/main_menu.tres" id="12_vj3jh"]
+[ext_resource type="Script" path="res://Player/Save.gd" id="13_f25e4"]
 [ext_resource type="Texture2D" uid="uid://cbnxbc3bt43fh" path="res://Lobby/coin.png" id="19_gjs8m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2mlyq"]
@@ -869,6 +870,15 @@ theme = ExtResource("12_vj3jh")
 text = "MENU"
 script = ExtResource("12_macvu")
 
+[node name="Save" type="Button" parent="ControlMenu/Test/UI"]
+offset_left = 38.0
+offset_top = 104.0
+offset_right = 161.0
+offset_bottom = 165.0
+theme = ExtResource("12_vj3jh")
+text = "SAVE"
+script = ExtResource("13_f25e4")
+
 [node name="Timer" type="Timer" parent="."]
 script = ExtResource("9_j7400")
 
@@ -887,35 +897,30 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0.381546, -38.7655)
 shape = SubResource("RectangleShape2D_ruuhr")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0.5, -15.5)
 shape = SubResource("RectangleShape2D_hqy56")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0.5, -15.5)
 shape = SubResource("RectangleShape2D_f6f5i")
 
 [node name="WaterDetection2D" parent="." instance=ExtResource("6_feefm")]
-visible = false
 position = Vector2(0, -15)
 
 [node name="BorderDetection2D" parent="." instance=ExtResource("7_gpa1d")]
-visible = false
 position = Vector2(0, -15)
 
 [node name="ItemMagnet" type="Area2D" parent="."]
-visible = false
 position = Vector2(1, -39)
 
 [node name="itemmagnet" type="CollisionShape2D" parent="ItemMagnet"]
 shape = SubResource("CircleShape2D_kcihu")
 
 [connection signal="pressed" from="ControlMenu/Test/UI/Menu" to="ControlMenu/Test/UI/Menu" method="_on_pressed"]
+[connection signal="pressed" from="ControlMenu/Test/UI/Save" to="ControlMenu/Test/UI/Save" method="_on_pressed"]
 [connection signal="water_state_changed" from="WaterDetection2D" to="." method="_on_water_detection_2d_water_state_changed"]
 [connection signal="border_state_changed" from="BorderDetection2D" to="." method="_on_border_detection_2d_border_state_changed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cox4vp7vm1fbh"]
+[gd_scene load_steps=24 format=3 uid="uid://cox4vp7vm1fbh"]
 
 [ext_resource type="Script" path="res://Interaction/DivingStore/DivingStore.gd" id="1_hwmmh"]
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="1_yh6cd"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dqder2380s6yt" path="res://Interaction/DivingStore/fin3.png" id="5_dnnwe"]
 [ext_resource type="Theme" uid="uid://qygcus68qcip" path="res://Lito-main menu/Scenes/MainMenu/menu_button.tres" id="5_ipu46"]
 [ext_resource type="Texture2D" uid="uid://bpjt6urc132og" path="res://Bag/bag.png" id="8_0heoj"]
+[ext_resource type="Theme" uid="uid://drt0akj02hwaf" path="res://Lito-main menu/Assets/equipped.tres" id="9_iujyq"]
 [ext_resource type="Texture2D" uid="uid://c456d5f2a3o5y" path="res://Bag/bag2.png" id="10_j1p76"]
+[ext_resource type="LabelSettings" uid="uid://hh5n7do0w5g3" path="res://Lito-main menu/Assets/inventory_label.tres" id="10_rb7ti"]
 [ext_resource type="Texture2D" uid="uid://d0vrxp2umr78h" path="res://Bag/bag3.png" id="11_hbjl7"]
 
 [sub_resource type="Theme" id="Theme_j2q2w"]
@@ -182,6 +184,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="equipped" type="Label" parent="Control/TabContainer/Kaki Katak/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.5
+offset_top = 306.0
+offset_right = 66.5
+offset_bottom = 342.0
+grow_horizontal = 2
+theme = ExtResource("9_iujyq")
+text = "TERBELI"
+label_settings = ExtResource("10_rb7ti")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="kaki1" type="Button" parent="Control/TabContainer/Kaki Katak/Panel"]
 layout_mode = 1
 anchors_preset = -1
@@ -211,6 +229,7 @@ scale = Vector2(0.17737, 0.17737)
 texture = ExtResource("4_awgqn")
 
 [node name="Label2" type="Label" parent="Control/TabContainer/Kaki Katak/Panel2"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 200.0
 offset_right = 172.0
@@ -239,6 +258,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="equipped" type="Label" parent="Control/TabContainer/Kaki Katak/Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.5
+offset_top = 306.0
+offset_right = 66.5
+offset_bottom = 342.0
+grow_horizontal = 2
+theme = ExtResource("9_iujyq")
+text = "TERBELI"
+label_settings = ExtResource("10_rb7ti")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="kaki2" type="Button" parent="Control/TabContainer/Kaki Katak/Panel2"]
 layout_mode = 1
 anchors_preset = -1
@@ -248,7 +283,7 @@ anchor_right = 0.877002
 anchor_bottom = 0.957901
 theme = ExtResource("5_bsx4e")
 theme_override_fonts/font = ExtResource("1_yh6cd")
-text = "1000"
+text = "2000"
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel3" type="Panel" parent="Control/TabContainer/Kaki Katak"]
@@ -267,6 +302,7 @@ scale = Vector2(0.120043, 0.120043)
 texture = ExtResource("5_dnnwe")
 
 [node name="Label2" type="Label" parent="Control/TabContainer/Kaki Katak/Panel3"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 185.0
 offset_right = 171.0
@@ -298,6 +334,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="equipped" type="Label" parent="Control/TabContainer/Kaki Katak/Panel3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.5
+offset_top = 305.0
+offset_right = 66.5
+offset_bottom = 341.0
+grow_horizontal = 2
+theme = ExtResource("9_iujyq")
+text = "TERBELI"
+label_settings = ExtResource("10_rb7ti")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="kaki3" type="Button" parent="Control/TabContainer/Kaki Katak/Panel3"]
 layout_mode = 1
 anchors_preset = -1
@@ -307,7 +359,7 @@ anchor_right = 0.893855
 anchor_bottom = 0.963135
 theme = ExtResource("5_bsx4e")
 theme_override_fonts/font = ExtResource("1_yh6cd")
-text = "2000"
+text = "5000"
 metadata/_edit_use_anchors_ = true
 
 [node name="Tas" type="TabBar" parent="Control/TabContainer"]
@@ -329,11 +381,13 @@ scale = Vector2(0.277372, 0.277372)
 texture = ExtResource("8_0heoj")
 
 [node name="Label3" type="Label" parent="Control/TabContainer/Tas/Panel"]
+layout_mode = 0
 offset_left = 9.0
 offset_top = 185.0
 offset_right = 171.0
 offset_bottom = 260.0
 text = "Menambah sedikit
+radius dan
 kapasitas sampah
 yang dibawa"
 label_settings = SubResource("LabelSettings_7w6l4")
@@ -356,18 +410,34 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="equipped" type="Label" parent="Control/TabContainer/Tas/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.5
+offset_top = 302.0
+offset_right = 66.5
+offset_bottom = 338.0
+grow_horizontal = 2
+theme = ExtResource("9_iujyq")
+text = "TERBELI"
+label_settings = ExtResource("10_rb7ti")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="tas1" type="Button" parent="Control/TabContainer/Tas/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.10929
-anchor_top = 0.829268
-anchor_right = 0.896175
-anchor_bottom = 0.95393
+anchor_left = 0.104972
+anchor_top = 0.820937
+anchor_right = 0.900553
+anchor_bottom = 0.947658
 grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("5_ipu46")
 theme_override_fonts/font = ExtResource("1_yh6cd")
 text = "500"
-metadata/_edit_use_anchors_ = true
 
 [node name="Panel2" type="Panel" parent="Control/TabContainer/Tas"]
 layout_mode = 0
@@ -384,11 +454,13 @@ scale = Vector2(0.298182, 0.298182)
 texture = ExtResource("10_j1p76")
 
 [node name="Label3" type="Label" parent="Control/TabContainer/Tas/Panel2"]
+layout_mode = 0
 offset_left = 10.0
 offset_top = 183.0
 offset_right = 172.0
 offset_bottom = 258.0
 text = "Lumayan menambah
+radius dan
 kapasitas sampah
 yang dibawa"
 label_settings = SubResource("LabelSettings_7w6l4")
@@ -411,16 +483,32 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="equipped" type="Label" parent="Control/TabContainer/Tas/Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.5
+offset_top = 300.0
+offset_right = 71.5
+offset_bottom = 336.0
+grow_horizontal = 2
+theme = ExtResource("9_iujyq")
+text = "TERBELI"
+label_settings = ExtResource("10_rb7ti")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="tas2" type="Button" parent="Control/TabContainer/Tas/Panel2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.116022
-anchor_top = 0.829201
-anchor_right = 0.872145
-anchor_bottom = 0.955923
+anchor_left = 0.138122
+anchor_top = 0.815427
+anchor_right = 0.906077
+anchor_bottom = 0.942149
 theme = ExtResource("5_ipu46")
 theme_override_fonts/font = ExtResource("1_yh6cd")
-text = "1000"
+text = "2000"
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel3" type="Panel" parent="Control/TabContainer/Tas"]
@@ -438,15 +526,33 @@ scale = Vector2(0.247273, 0.247273)
 texture = ExtResource("11_hbjl7")
 
 [node name="Label3" type="Label" parent="Control/TabContainer/Tas/Panel3"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 183.0
 offset_right = 170.0
 offset_bottom = 258.0
-text = "kapasitas TERBESAR
+text = "kapasitas dan radius
+TERBESAR
 untuk membawa
 sampah anda"
 label_settings = SubResource("LabelSettings_7w6l4")
 horizontal_alignment = 1
+
+[node name="equipped" type="Label" parent="Control/TabContainer/Tas/Panel3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.5
+offset_top = 300.0
+offset_right = 68.5
+offset_bottom = 336.0
+grow_horizontal = 2
+theme = ExtResource("9_iujyq")
+text = "TERBELI"
+label_settings = ExtResource("10_rb7ti")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Control/TabContainer/Tas/Panel3"]
 layout_mode = 1
@@ -470,12 +576,12 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.117318
-anchor_top = 0.836189
-anchor_right = 0.882681
-anchor_bottom = 0.963135
+anchor_top = 0.824513
+anchor_right = 0.905028
+anchor_bottom = 0.952646
 theme = ExtResource("5_ipu46")
 theme_override_fonts/font = ExtResource("1_yh6cd")
-text = "2000"
+text = "5000"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="cancel" to="." method="_on_cancel_pressed"]

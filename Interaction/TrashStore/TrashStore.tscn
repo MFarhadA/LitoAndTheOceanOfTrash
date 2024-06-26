@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://3ivl1jtnhnrg"]
 
-[ext_resource type="Script" path="res://Interaction/BoatStore/BoatStore.gd" id="1_yecoq"]
+[ext_resource type="Script" path="res://Interaction/TrashStore/TrashStore.gd" id="1_7yd5q"]
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="2_wkwif"]
 [ext_resource type="Theme" uid="uid://c30qsbfwolqdo" path="res://Interaction/storetheme.tres" id="3_1nfn4"]
 
@@ -15,7 +15,7 @@ bg_color = Color(0.2394, 0.36309, 0.63, 1)
 
 [node name="TrashStore" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_yecoq")
+script = ExtResource("1_7yd5q")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8

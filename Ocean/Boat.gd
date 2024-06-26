@@ -1,16 +1,8 @@
 extends CharacterBody2D
 
-@export var OrganicLimit = 50
-@export var Organic = 0
-var OrganicDisplay = 0
-
-@export var InorganicLimit= 50
-@export var Inorganic = 0
-var InorganicDisplay = 0
-
-@export var DangerLimit = 30
-@export var Danger = 0
-var DangerDisplay = 0
+var OrganicTemp = 0
+var InorganicTemp = 0
+var DangerTemp = 0
 
 @onready var player = get_parent().get_node("Player")
 @onready var organic_label = $OrganicLabel
@@ -23,61 +15,85 @@ func _process(delta):
 	update_danger_label()
 
 func organic_limit():
-	return OrganicLimit
+	return BoatStats.OrganicLimit
 func organic():
-	return Organic
-func organic_display():
-	return OrganicDisplay
+	return BoatStats.Organic
 func add_organic(add):
-	Organic += add
-	OrganicDisplay = (Organic / OrganicLimit) * 100
-	return Organic
+	if BoatStats.Organic + add <= BoatStats.OrganicLimit:
+		BoatStats.Organic += add
+	else:
+		BoatStats.Organic = BoatStats.OrganicLimit
+	return BoatStats.Organic
+func move_organic(move):
+	if BoatStats.Organic + move < BoatStats.OrganicLimit:
+		OrganicTemp = move
+	else:
+		OrganicTemp = move - ((BoatStats.Organic + move) - BoatStats.OrganicLimit)
+	return OrganicTemp
 
 func inorganic_limit():
-	return InorganicLimit
+	return BoatStats.InorganicLimit
 func inorganic():
-	return Inorganic
-func inorganic_display():
-	return InorganicDisplay
+	return BoatStats.Inorganic
 func add_inorganic(add):
-	Inorganic += add
-	InorganicDisplay = (Inorganic / InorganicLimit) * 100
-	return Organic
+	if BoatStats.Inorganic + add <= BoatStats.InorganicLimit:
+		BoatStats.Inorganic += add
+	else:
+		BoatStats.Inorganic = BoatStats.InorganicLimit
+	return BoatStats.Inorganic
+func move_inorganic(move):
+	if BoatStats.Inorganic + move < BoatStats.InorganicLimit:
+		InorganicTemp = move
+	else:
+		InorganicTemp = move - ((BoatStats.Inorganic + move) - BoatStats.InorganicLimit)
+	return InorganicTemp
 
 func danger_limit():
-	return DangerLimit
+	return BoatStats.DangerLimit
 func danger():
-	return Danger
-func danger_display():
-	return DangerDisplay
+	return BoatStats.Danger
 func add_danger(add):
-	Danger += add
-	DangerDisplay = (Danger / DangerLimit) * 100
-	return Danger
+	if BoatStats.Danger + add <= BoatStats.DangerLimit:
+		BoatStats.Danger += add
+	else:
+		BoatStats.Danger = BoatStats.DangerLimit
+	return BoatStats.Danger
+func move_danger(move):
+	if BoatStats.Danger + move < BoatStats.DangerLimit:
+		DangerTemp = move
+	else:
+		DangerTemp = move - ((BoatStats.Danger + move) - BoatStats.DangerLimit)
+	return DangerTemp
 
 func update_organic_label():
-	organic_label.text = "Organik\n" + "(" + str(Organic) + "/" + str(OrganicLimit) + ")"
-	if Organic == OrganicLimit:
+	organic_label.text = "Organik\n" + "(" + str(BoatStats.Organic) + "/" + str(BoatStats.OrganicLimit) + ")"
+	if BoatStats.Organic == BoatStats.OrganicLimit:
 		organic_label.text += "\nPENUH!"
-
 func update_inorganic_label():
-	inorganic_label.text = "Inorganik\n" + "(" + str(Inorganic) + "/" + str(OrganicLimit) + ")"
-	if Inorganic == player.inorganic_limit():
+	inorganic_label.text = "Inorganik\n" + "(" + str(BoatStats.Inorganic) + "/" + str(BoatStats.InorganicLimit) + ")"
+	if BoatStats.Inorganic == BoatStats.InorganicLimit:
 		inorganic_label.text += "\nPENUH!"
-
 func update_danger_label():
-	danger_label.text = "B3\n" + "(" + str(Danger) + "/" + str(DangerLimit) + ")"
-	if Danger == DangerLimit:
+	danger_label.text = "B3\n" + "(" + str(BoatStats.Danger) + "/" + str(BoatStats.DangerLimit) + ")"
+	if BoatStats.Danger == BoatStats.DangerLimit:
 		danger_label.text += "\nPENUH!"
-
+		
 func _on_trashmove_pressed():
+	Click.play()
+	move_organic(player.organic())
 	add_organic(player.organic())
-	player.move_organic(player.organic())
+	player.move_organic(OrganicTemp)
+	
+	move_inorganic(player.inorganic())
 	add_inorganic(player.inorganic())
-	player.move_inorganic(player.inorganic())
+	player.move_inorganic(InorganicTemp)
+	
+	move_danger(player.danger())
 	add_danger(player.danger())
-	player.move_danger(player.danger())
-	print("moved")
+	player.move_danger(DangerTemp)
 
 func _on_back_pressed():
+	PlayerStats.save()
+	BoatStats.save()
+	Pop.play()
 	get_tree().change_scene_to_file("res://Lobby/Lobby.tscn")

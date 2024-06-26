@@ -1,8 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dot18n8ki5hqt"]
+[gd_scene load_steps=7 format=3 uid="uid://dot18n8ki5hqt"]
 
 [ext_resource type="Script" path="res://Lito-main menu/Scenes/MainMenu/setting.gd" id="1_jsjm6"]
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="1_qnjmx"]
 [ext_resource type="Theme" uid="uid://bqoyhdekhayqr" path="res://Lito-main menu/Scenes/MainMenu/red_button.tres" id="3_tsyo8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lvjmw"]
+font = ExtResource("1_qnjmx")
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_y4o4q"]
+font = ExtResource("1_qnjmx")
+font_size = 76
 
 [sub_resource type="SystemFont" id="SystemFont_l8e4g"]
 font_names = PackedStringArray("Creato Display")
@@ -31,39 +39,60 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.160784, 0.160784, 0.160784, 0.780392)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-anchors_preset = -1
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -160.0
-offset_top = 128.0
-offset_right = 168.0
-offset_bottom = 264.0
+offset_left = -265.0
+offset_top = 293.0
+offset_right = 221.0
+offset_bottom = 330.0
 grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("1_qnjmx")
-theme_override_font_sizes/normal_font_size = 80
-text = "SETTING"
-tab_size = 5
+text = "Volume Musik Latar Belakang"
+label_settings = SubResource("LabelSettings_lvjmw")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
-anchors_preset = -1
+[node name="Label3" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -336.0
-offset_top = 280.0
-offset_right = -232.0
-offset_bottom = 328.0
+offset_left = -265.0
+offset_top = 382.0
+offset_right = 221.0
+offset_bottom = 419.0
 grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("1_qnjmx")
-theme_override_font_sizes/normal_font_size = 30
-text = "Volume"
-tab_size = 5
+text = "Volume Efek Suara"
+label_settings = SubResource("LabelSettings_lvjmw")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -369.0
+offset_top = 104.0
+offset_right = 369.0
+offset_bottom = 238.0
+grow_horizontal = 2
+text = "PENGATURAN"
+label_settings = SubResource("LabelSettings_y4o4q")
+horizontal_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="CanvasLayer"]
+offset_left = 315.0
+offset_top = 403.0
+offset_right = 837.0
+offset_bottom = 473.0
+min_value = -30.0
+max_value = 0.0
+exp_edit = true
 
 [node name="HSlider" type="HSlider" parent="CanvasLayer"]
-offset_left = 240.0
+offset_left = 315.0
 offset_top = 312.0
-offset_right = 912.0
+offset_right = 837.0
 offset_bottom = 382.0
+min_value = -30.0
+max_value = 0.0
+exp_edit = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 37.695
@@ -79,4 +108,6 @@ theme_override_fonts/font = SubResource("SystemFont_l8e4g")
 theme_override_font_sizes/font_size = 30
 text = " < Back "
 
+[connection signal="value_changed" from="CanvasLayer/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Back_button" to="." method="_on_back_button_pressed"]

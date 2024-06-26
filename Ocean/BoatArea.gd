@@ -22,6 +22,5 @@ func _on_body_exited(body):
 		back.visible = false
 		_is_in = false
 
-
 func is_in_boat() -> bool:
 	return is_in

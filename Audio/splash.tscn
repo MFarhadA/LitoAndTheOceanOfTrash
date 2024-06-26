@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://eklcm8frltkj"]
+
+[ext_resource type="AudioStream" uid="uid://c3sfki7ymrg3t" path="res://Audio/splash.mp3" id="1_3pa6d"]
+
+[node name="Splash" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_3pa6d")
+volume_db = 8.833
+pitch_scale = 1.89
+bus = &"sfx"

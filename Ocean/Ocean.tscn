@@ -295,7 +295,6 @@ theme_type_variation = &"FlatButton"
 text = "PINDAHKAN SAMPAH"
 
 [node name="Border" type="StaticBody2D" parent="."]
-visible = false
 collision_layer = 4
 collision_mask = 0
 
@@ -304,7 +303,6 @@ position = Vector2(883, 360)
 shape = SubResource("RectangleShape2D_eosy4")
 
 [node name="Water" type="StaticBody2D" parent="."]
-visible = false
 collision_layer = 2
 collision_mask = 0
 

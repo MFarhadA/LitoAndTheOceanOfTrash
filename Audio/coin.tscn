@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://t00ufqhp2j1o"]
+
+[ext_resource type="AudioStream" uid="uid://dio5oix7kukmp" path="res://Audio/coin.mp3" id="1_fjk18"]
+
+[node name="coin" type="AudioStreamPlayer"]
+stream = ExtResource("1_fjk18")
+pitch_scale = 1.13
+bus = &"sfx"

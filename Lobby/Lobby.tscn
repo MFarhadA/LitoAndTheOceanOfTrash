@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dc15gur6va682"]
+[gd_scene load_steps=45 format=3 uid="uid://dc15gur6va682"]
 
 [ext_resource type="Texture2D" uid="uid://da61x6b73yfmt" path="res://Ocean/assets/lobby1.png" id="1_f0e2l"]
 [ext_resource type="Script" path="res://Lobby/Lobby.gd" id="1_kukqv"]
@@ -26,6 +26,7 @@
 [ext_resource type="Theme" uid="uid://dr5h70dwsaamj" path="res://Lito-main menu/Assets/button.tres" id="15_5w7a4"]
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="16_ux10y"]
 [ext_resource type="Script" path="res://Lobby/Interact.gd" id="17_atkto"]
+[ext_resource type="PackedScene" uid="uid://u1due77u0k4d" path="res://Audio/crowd.tscn" id="27_634bw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3v4l"]
 bg_color = Color(0.84, 0.616, 0, 1)
@@ -170,7 +171,7 @@ offset_bottom = 1797.0
 color = Color(0.0235294, 0.431373, 0.721569, 0.686275)
 
 [node name="Player" parent="." instance=ExtResource("2_34dcp")]
-position = Vector2(281.025, 527)
+position = Vector2(280, 530)
 scale = Vector2(0.263, 0.263)
 
 [node name="Camera2" parent="Player" instance=ExtResource("2_74xfi")]
@@ -337,6 +338,10 @@ shape = SubResource("RectangleShape2D_gjd16")
 
 [node name="Island" parent="Island" instance=ExtResource("11_xup3q")]
 visible = false
+
+[node name="crowd" parent="." instance=ExtResource("27_634bw")]
+autoplay = true
+stream_paused = false
 
 [connection signal="pressed" from="Boat/CanvasLayer/Interact" to="." method="_on_interact_pressed"]
 [connection signal="body_entered" from="AreaDivingShop" to="AreaDivingShop" method="_on_body_entered"]

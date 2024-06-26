@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://pdus072lmbfd"]
+[gd_scene load_steps=7 format=3 uid="uid://pdus072lmbfd"]
 
 [ext_resource type="Script" path="res://Lito-main menu/Script/MainMenuButton.gd" id="1_2q4nm"]
 [ext_resource type="Texture2D" uid="uid://bmtlcbedpha4b" path="res://Lito-main menu/Assets/TitleScreen.png" id="2_4ntst"]
 [ext_resource type="FontFile" uid="uid://drnckmvhotjsv" path="res://Lito-main menu/Assets/Fonts/GramatikaTrial-Bold-BF65dea4c5530e5.otf" id="3_b471l"]
 [ext_resource type="Texture2D" uid="uid://c5ponj8labjub" path="res://Lito-main menu/Assets/bg.jpg" id="4_k7dhx"]
 [ext_resource type="Theme" uid="uid://decb5nyu4rg66" path="res://Lito-main menu/Scenes/MainMenu/main_menu.tres" id="4_xndoh"]
+[ext_resource type="Theme" uid="uid://bqoyhdekhayqr" path="res://Lito-main menu/Scenes/MainMenu/red_button.tres" id="6_i6657"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -92,7 +93,7 @@ text = "CREDIT"
 [node name="Exit_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("4_xndoh")
+theme = ExtResource("6_i6657")
 theme_override_fonts/font = ExtResource("3_b471l")
 theme_override_font_sizes/font_size = 30
 text = "QUIT

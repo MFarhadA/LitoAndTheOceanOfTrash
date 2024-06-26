@@ -14,11 +14,19 @@ config/name="Lito And The Ocean Of Trash"
 run/main_scene="res://Lito-main menu/Scenes/IntroMenu/IntroMenu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 boot_splash/show_image=false
-config/icon="res://Lobby/coin.png"
+config/icon="res://logo.png"
 
 [autoload]
 
 InteractionManager="*res://Interaction/InteractionManager.tscn"
+BoatStats="*res://singleton/boat_stats.gd"
+PlayerStats="*res://singleton/player_stats.gd"
+Bgm="*res://Audio/bgm.tscn"
+Click="*res://Audio/click.tscn"
+Coin="*res://Audio/coin.tscn"
+Splash="*res://Audio/splash.tscn"
+Swim="*res://Audio/swim.tscn"
+Pop="*res://Audio/pop.tscn"
 
 [display]
 
