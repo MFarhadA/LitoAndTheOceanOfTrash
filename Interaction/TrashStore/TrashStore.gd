@@ -13,5 +13,7 @@ func _on_button_pressed():
 	BoatStats.Organic = 0
 	BoatStats.Inorganic = 0
 	BoatStats.Danger = 0
+	PlayerStats.save()
+	BoatStats.save()
 	get_tree().paused = false
 	visible = false

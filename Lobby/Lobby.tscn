@@ -341,7 +341,6 @@ visible = false
 
 [node name="crowd" parent="." instance=ExtResource("27_634bw")]
 autoplay = true
-stream_paused = false
 
 [connection signal="pressed" from="Boat/CanvasLayer/Interact" to="." method="_on_interact_pressed"]
 [connection signal="body_entered" from="AreaDivingShop" to="AreaDivingShop" method="_on_body_entered"]

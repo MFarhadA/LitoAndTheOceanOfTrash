@@ -3,12 +3,29 @@ extends CanvasLayer
 var bought
 
 func _ready():
-	$"Control/TabContainer/Kaki Katak/Panel/kaki1".visible = false
-	$"Control/TabContainer/Kaki Katak/Panel2/kaki2".visible = false
-	$"Control/TabContainer/Kaki Katak/Panel3/kaki3".visible = false
+	if PlayerStats.kaki1_equipped:
+		$"Control/TabContainer/Kaki Katak/Panel/kaki1".visible = false
+	if PlayerStats.kaki2_equipped:
+		$"Control/TabContainer/Kaki Katak/Panel/kaki1".visible = false
+		$"Control/TabContainer/Kaki Katak/Panel2/kaki2".visible = false
+	if PlayerStats.kaki3_equipped:
+		$"Control/TabContainer/Kaki Katak/Panel/kaki1".visible = false
+		$"Control/TabContainer/Kaki Katak/Panel2/kaki2".visible = false
+		$"Control/TabContainer/Kaki Katak/Panel3/kaki3".visible = false
+	if PlayerStats.tas1_equipped:
+		$Control/TabContainer/Tas/Panel/tas1.visible = false
+	if PlayerStats.tas2_equipped:
+		$Control/TabContainer/Tas/Panel/tas1.visible = false
+		$Control/TabContainer/Tas/Panel2/tas2.visible = false
+	if PlayerStats.tas3_equipped:
+		$Control/TabContainer/Tas/Panel/tas1.visible = false
+		$Control/TabContainer/Tas/Panel2/tas2.visible = false
+		$Control/TabContainer/Tas/Panel3/tas3.visible = false
 
 func _on_cancel_pressed():
 	Click.play()
+	PlayerStats.save()
+	BoatStats.save()
 	get_tree().paused = false
 	visible = false
 

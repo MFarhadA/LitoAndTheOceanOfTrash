@@ -2,7 +2,20 @@ extends CanvasLayer
 
 var bought
 
+func _ready():
+	if BoatStats.ship1_equipped:
+		$TabContainer/Perahu/control/Panel/lvl1.visible = false
+	if BoatStats.ship2_equipped:
+		$TabContainer/Perahu/control/Panel/lvl1.visible = false
+		$TabContainer/Perahu/control/Panel2/lvl2.visible = false
+	if BoatStats.ship3_equipped:
+		$TabContainer/Perahu/control/Panel/lvl1.visible = false
+		$TabContainer/Perahu/control/Panel2/lvl2.visible = false
+		$TabContainer/Perahu/control/Panel3/lvl3.visible = false
+
 func _on_cancel_pressed():
+	PlayerStats.save()
+	BoatStats.save()
 	Click.play()
 	get_tree().paused = false
 	visible = false

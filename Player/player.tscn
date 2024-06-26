@@ -871,6 +871,7 @@ text = "MENU"
 script = ExtResource("12_macvu")
 
 [node name="Save" type="Button" parent="ControlMenu/Test/UI"]
+visible = false
 offset_left = 38.0
 offset_top = 104.0
 offset_right = 161.0
