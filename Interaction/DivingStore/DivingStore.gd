@@ -76,7 +76,7 @@ func _on_tas_1_pressed():
 		PlayerStats.OrganicLimit = 100
 		PlayerStats.InorganicLimit = 100
 		PlayerStats.DangerLimit = 60
-		PlayerStats.magnet_radius = 1.1
+		PlayerStats.magnet_radius = 1.2
 		$Control/TabContainer/Tas/Panel/tas1.visible = false
 func _on_tas_2_pressed():
 	_buy(2000)

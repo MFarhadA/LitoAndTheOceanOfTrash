@@ -1,6 +1,6 @@
 extends Node
 
-var save_path = "res://SaveFile/player.save"
+var save_path = "res://player.save"
 
 var money = 40000
 
@@ -35,6 +35,7 @@ func save():
 	file.store_var(tas1_equipped)
 	file.store_var(tas2_equipped)
 	file.store_var(tas3_equipped)
+	file.close()
 	
 func load_data():
 	if FileAccess.file_exists(save_path):
@@ -52,5 +53,6 @@ func load_data():
 		tas1_equipped = file.get_var(tas1_equipped)
 		tas2_equipped = file.get_var(tas2_equipped)
 		tas3_equipped = file.get_var(tas3_equipped)
+		file.close()
 	else:
 		print("no data.")

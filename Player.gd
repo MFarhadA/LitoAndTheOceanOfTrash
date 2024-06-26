@@ -31,8 +31,8 @@ var SWIM_NORMAL_SPEED : float = PlayerStats.swim_speed
 @onready var dash = $Timer
 
 func _ready():
-	area_magnet.shape.radius *= PlayerStats.magnet_radius
-
+	area_magnet.shape.radius = 70 * PlayerStats.magnet_radius
+	print (area_magnet.shape.radius)
 func _physics_process(delta):
 	var direction_x = Input.get_axis("Left", "Right")
 	var direction_y = Input.get_axis("Up", "Down")
