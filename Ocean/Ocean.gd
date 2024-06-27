@@ -69,7 +69,7 @@ func update_organic_label():
 		organic_label.text += "\nPENUH!"
 
 func update_inorganic_label():
-	inorganic_label.text = "Inorganik\n" + "(" + str(player.inorganic()) + "/" + str(player.inorganic_limit()) + ")"
+	inorganic_label.text = "Anorganik\n" + "(" + str(player.inorganic()) + "/" + str(player.inorganic_limit()) + ")"
 	if player.inorganic() == player.inorganic_limit():
 		inorganic_label.text += "\nPENUH!"
 

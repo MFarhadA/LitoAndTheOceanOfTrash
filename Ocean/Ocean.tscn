@@ -268,15 +268,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 256.0
+offset_left = 360.0
 offset_top = -290.0
 offset_right = 548.0
-offset_bottom = -237.0
+offset_bottom = -204.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_vdhwg")
 theme_type_variation = &"FlatButton"
-text = "KEMBALI KE PULAU"
+text = "KEMBALI KE
+DERMAGA"
 
 [node name="trashmove" type="Button" parent="Player/UI"]
 anchors_preset = 8

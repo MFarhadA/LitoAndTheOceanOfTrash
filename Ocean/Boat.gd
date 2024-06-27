@@ -70,7 +70,7 @@ func update_organic_label():
 	if BoatStats.Organic == BoatStats.OrganicLimit:
 		organic_label.text += "\nPENUH!"
 func update_inorganic_label():
-	inorganic_label.text = "Inorganik\n" + "(" + str(BoatStats.Inorganic) + "/" + str(BoatStats.InorganicLimit) + ")"
+	inorganic_label.text = "Anorganik\n" + "(" + str(BoatStats.Inorganic) + "/" + str(BoatStats.InorganicLimit) + ")"
 	if BoatStats.Inorganic == BoatStats.InorganicLimit:
 		inorganic_label.text += "\nPENUH!"
 func update_danger_label():

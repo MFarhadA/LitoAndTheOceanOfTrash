@@ -2,7 +2,7 @@ extends Node
 
 var save_path = "user://player.json"
 
-var money = 40000
+var money = 0
 
 var swim_speed : float = 50.0
 var dash_speed = 2500
